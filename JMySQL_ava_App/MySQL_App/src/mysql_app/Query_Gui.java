@@ -5,6 +5,13 @@
  */
 package mysql_app;
 
+import com.mysql.jdbc.Connection;
+import com.mysql.jdbc.Statement;
+
+import java.sql.DriverManager;
+import java.sql.ResultSet;
+import javax.swing.JOptionPane;
+
 /**
  *
  * @author RociodelosAngeles
@@ -16,8 +23,30 @@ public class Query_Gui extends javax.swing.JInternalFrame {
      */
     public Query_Gui() {
         initComponents();
-    }
+        Connection cn;
+        Statement st;
+        ResultSet rs;
+        try {
+                     
 
+            cn = (Connection) DriverManager.getConnection("jdbc:mysql://127.0.0.1:3306/sakila", "Zoidiano0", "Zoidiano0!");
+                       
+
+            st = (Statement) cn.createStatement();
+            String s = "select * from actor limit 15";
+            rs = st.executeQuery(s);
+           
+            while (rs.next()) {        
+               
+                jComboBox1.addItem(rs.getString(2));
+            }
+        } catch (Exception e) {
+            System.out.println(e);
+        }
+        
+    }
+   
+    
     /**
      * This method is called from within the constructor to initialize the form.
      * WARNING: Do NOT modify this code. The content of this method is always
@@ -27,21 +56,57 @@ public class Query_Gui extends javax.swing.JInternalFrame {
     // <editor-fold defaultstate="collapsed" desc="Generated Code">//GEN-BEGIN:initComponents
     private void initComponents() {
 
+        jComboBox1 = new javax.swing.JComboBox<>();
+        jButton1 = new javax.swing.JButton();
+
+        setClosable(true);
+        setIconifiable(true);
+        setMaximizable(true);
+        setResizable(true);
+
+        jButton1.setText("jButton1");
+        jButton1.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                jButton1ActionPerformed(evt);
+            }
+        });
+
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
         getContentPane().setLayout(layout);
         layout.setHorizontalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGap(0, 394, Short.MAX_VALUE)
+            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, layout.createSequentialGroup()
+                .addContainerGap(83, Short.MAX_VALUE)
+                .addComponent(jComboBox1, javax.swing.GroupLayout.PREFERRED_SIZE, 232, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addGap(79, 79, 79))
+            .addGroup(layout.createSequentialGroup()
+                .addGap(122, 122, 122)
+                .addComponent(jButton1)
+                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
         );
         layout.setVerticalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGap(0, 274, Short.MAX_VALUE)
+            .addGroup(layout.createSequentialGroup()
+                .addContainerGap()
+                .addComponent(jComboBox1, javax.swing.GroupLayout.PREFERRED_SIZE, 35, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 110, Short.MAX_VALUE)
+                .addComponent(jButton1)
+                .addGap(91, 91, 91))
         );
 
         pack();
     }// </editor-fold>//GEN-END:initComponents
 
+    private void jButton1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton1ActionPerformed
+        // TODO add your handling code here:
+              
+
+        
+    }//GEN-LAST:event_jButton1ActionPerformed
+
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
+    private javax.swing.JButton jButton1;
+    private javax.swing.JComboBox<String> jComboBox1;
     // End of variables declaration//GEN-END:variables
 }
