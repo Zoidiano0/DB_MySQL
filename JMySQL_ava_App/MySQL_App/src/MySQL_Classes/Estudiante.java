@@ -3,20 +3,12 @@
  * To change this template file, choose Tools | Templates
  * and open the template in the editor.
  */
-package mysql_app;
+package MySQL_Classes;
 
 /**
  *
  * @author RociodelosAngeles
  */
-public class MySQL_App {
-
-    /**
-     * @param args the command line arguments
-     */
-    public static void main(String[] args) {
-        Main_GUI GUI = new Main_GUI();
-        GUI.setVisible(true);
-    }
+public class Estudiante {
     
 }
