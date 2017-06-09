@@ -7,7 +7,7 @@ package mysql_app;
 
 /**
  *
- * @author RociodelosAngeles
+ c
  */
 public class MySQL_App {
 
@@ -17,6 +17,7 @@ public class MySQL_App {
     public static void main(String[] args) {
         Main_GUI GUI = new Main_GUI();
         GUI.setVisible(true);
+        
     }
     
 }
