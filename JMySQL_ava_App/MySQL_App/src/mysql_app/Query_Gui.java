@@ -24,15 +24,19 @@ public class Query_Gui extends javax.swing.JInternalFrame {
      */
     public Query_Gui() {
         initComponents();
-        Connection cn;
+         Connection cn;
         Statement st;
         Statement st2;
         ResultSet rs;
         ResultSet rs2;
          DefaultListModel model = new DefaultListModel();
           DefaultListModel model2 = new DefaultListModel();
+          model.clear();
+          model2.clear();
+          int cnt=0;
+          int cnt2=0;
         try {
-                     
+                  
 
             cn = (Connection) DriverManager.getConnection("jdbc:mysql://127.0.0.1:3306/ciercom_pre_matricula", "Zoidiano0", "Zoidiano0!");
                        
@@ -40,14 +44,16 @@ public class Query_Gui extends javax.swing.JInternalFrame {
             st = (Statement) cn.createStatement();
             String s = "select * from estudiante where Estado_Matricula = 0";
             rs = st.executeQuery(s);
-           int cnt=0;
+           cnt=0;
             while (rs.next()) {        
                
                 model.addElement(rs.getString(1)+rs.getString(2));
                 cnt++;
-                JLabel_ContNo.setText(String.valueOf(cnt));
+                
                 
             }
+            JLabel_ContNo.setText(String.valueOf(cnt));
+            System.out.println(cnt);
             Jlist_NM.setModel(model);
             
             
@@ -56,21 +62,23 @@ public class Query_Gui extends javax.swing.JInternalFrame {
             st2 = (Statement) cn.createStatement();
             String s2 = "select * from estudiante where Estado_Matricula = 1";
             rs2 = st.executeQuery(s2);
-           int cnt2=0;
+            cnt2=0;
             while (rs2.next()) {        
                
                 model2.addElement(rs2.getString(1)+rs2.getString(2));
                 cnt2++;
-                JLabel_Cont_M.setText(String.valueOf(cnt2));
+               
                 
             }
             Jlist_Mat.setModel(model2);
+             JLabel_Cont_M.setText(String.valueOf(cnt2));
             
-            
+            System.out.println(cnt2);
             
             
         } catch (Exception e) {
             System.out.println(e);
+            
         }
         
     }
@@ -207,15 +215,20 @@ public class Query_Gui extends javax.swing.JInternalFrame {
 
     private void JButton_RefreshActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_JButton_RefreshActionPerformed
         // TODO add your handling code here:
-        Connection cn;
+        
+       Connection cn;
         Statement st;
         Statement st2;
         ResultSet rs;
         ResultSet rs2;
          DefaultListModel model = new DefaultListModel();
           DefaultListModel model2 = new DefaultListModel();
+          model.clear();
+          model2.clear();
+          int cnt=0;
+          int cnt2=0;
         try {
-                     
+                  
 
             cn = (Connection) DriverManager.getConnection("jdbc:mysql://127.0.0.1:3306/ciercom_pre_matricula", "Zoidiano0", "Zoidiano0!");
                        
@@ -223,14 +236,16 @@ public class Query_Gui extends javax.swing.JInternalFrame {
             st = (Statement) cn.createStatement();
             String s = "select * from estudiante where Estado_Matricula = 0";
             rs = st.executeQuery(s);
-           int cnt=0;
+           cnt=0;
             while (rs.next()) {        
                
-                model.addElement(rs.getString(2));
+                model.addElement(rs.getString(1)+rs.getString(2));
                 cnt++;
-                JLabel_ContNo.setText(String.valueOf(cnt));
+                
                 
             }
+            JLabel_ContNo.setText(String.valueOf(cnt));
+            System.out.println(cnt);
             Jlist_NM.setModel(model);
             
             
@@ -239,22 +254,25 @@ public class Query_Gui extends javax.swing.JInternalFrame {
             st2 = (Statement) cn.createStatement();
             String s2 = "select * from estudiante where Estado_Matricula = 1";
             rs2 = st.executeQuery(s2);
-           int cnt2=0;
+            cnt2=0;
             while (rs2.next()) {        
                
                 model2.addElement(rs2.getString(1)+rs2.getString(2));
                 cnt2++;
-                JLabel_Cont_M.setText(String.valueOf(cnt2));
+               
                 
             }
             Jlist_Mat.setModel(model2);
+             JLabel_Cont_M.setText(String.valueOf(cnt2));
             
-            
+            System.out.println(cnt2);
             
             
         } catch (Exception e) {
             System.out.println(e);
+            
         }
+        
     }//GEN-LAST:event_JButton_RefreshActionPerformed
 
 
