@@ -26,26 +26,49 @@ public class Query_Gui extends javax.swing.JInternalFrame {
         initComponents();
         Connection cn;
         Statement st;
+        Statement st2;
         ResultSet rs;
+        ResultSet rs2;
          DefaultListModel model = new DefaultListModel();
+          DefaultListModel model2 = new DefaultListModel();
         try {
                      
 
-            cn = (Connection) DriverManager.getConnection("jdbc:mysql://127.0.0.1:3306/sakila", "Zoidiano0", "Zoidiano0!");
+            cn = (Connection) DriverManager.getConnection("jdbc:mysql://127.0.0.1:3306/ciercom_pre_matricula", "Zoidiano0", "Zoidiano0!");
                        
 
             st = (Statement) cn.createStatement();
-            String s = "select * from actor limit 50";
+            String s = "select * from estudiante where Estado_Matricula = 0";
             rs = st.executeQuery(s);
            int cnt=0;
             while (rs.next()) {        
                
-                model.addElement(rs.getString(2));
+                model.addElement(rs.getString(1)+rs.getString(2));
                 cnt++;
                 JLabel_ContNo.setText(String.valueOf(cnt));
                 
             }
-            jList1.setModel(model);
+            Jlist_NM.setModel(model);
+            
+            
+            //LLenando ya matriculados
+             cn = (Connection) DriverManager.getConnection("jdbc:mysql://127.0.0.1:3306/ciercom_pre_matricula", "Zoidiano0", "Zoidiano0!");
+            st2 = (Statement) cn.createStatement();
+            String s2 = "select * from estudiante where Estado_Matricula = 1";
+            rs2 = st.executeQuery(s2);
+           int cnt2=0;
+            while (rs2.next()) {        
+               
+                model2.addElement(rs2.getString(1)+rs2.getString(2));
+                cnt2++;
+                JLabel_Cont_M.setText(String.valueOf(cnt2));
+                
+            }
+            Jlist_Mat.setModel(model2);
+            
+            
+            
+            
         } catch (Exception e) {
             System.out.println(e);
         }
@@ -65,12 +88,13 @@ public class Query_Gui extends javax.swing.JInternalFrame {
         jPanel1 = new javax.swing.JPanel();
         jLabel1 = new javax.swing.JLabel();
         SCroll_No_Mat = new javax.swing.JScrollPane();
-        jList1 = new javax.swing.JList<>();
+        Jlist_NM = new javax.swing.JList<>();
         JLabel_ContNo = new javax.swing.JLabel();
         jPanel2 = new javax.swing.JPanel();
         jLabel2 = new javax.swing.JLabel();
         jScrollPane1 = new javax.swing.JScrollPane();
-        jList2 = new javax.swing.JList<>();
+        Jlist_Mat = new javax.swing.JList<>();
+        JLabel_Cont_M = new javax.swing.JLabel();
         JButton_Refresh = new javax.swing.JButton();
 
         setClosable(true);
@@ -82,7 +106,7 @@ public class Query_Gui extends javax.swing.JInternalFrame {
 
         jLabel1.setText("No Matriculado");
 
-        SCroll_No_Mat.setViewportView(jList1);
+        SCroll_No_Mat.setViewportView(Jlist_NM);
 
         javax.swing.GroupLayout jPanel1Layout = new javax.swing.GroupLayout(jPanel1);
         jPanel1.setLayout(jPanel1Layout);
@@ -114,7 +138,7 @@ public class Query_Gui extends javax.swing.JInternalFrame {
 
         jLabel2.setText("Matriculado");
 
-        jScrollPane1.setViewportView(jList2);
+        jScrollPane1.setViewportView(Jlist_Mat);
 
         javax.swing.GroupLayout jPanel2Layout = new javax.swing.GroupLayout(jPanel2);
         jPanel2.setLayout(jPanel2Layout);
@@ -126,6 +150,8 @@ public class Query_Gui extends javax.swing.JInternalFrame {
                     .addComponent(jScrollPane1, javax.swing.GroupLayout.DEFAULT_SIZE, 279, Short.MAX_VALUE)
                     .addGroup(jPanel2Layout.createSequentialGroup()
                         .addComponent(jLabel2)
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
+                        .addComponent(JLabel_Cont_M, javax.swing.GroupLayout.PREFERRED_SIZE, 37, javax.swing.GroupLayout.PREFERRED_SIZE)
                         .addGap(0, 0, Short.MAX_VALUE)))
                 .addContainerGap())
         );
@@ -133,13 +159,20 @@ public class Query_Gui extends javax.swing.JInternalFrame {
             jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(jPanel2Layout.createSequentialGroup()
                 .addContainerGap()
-                .addComponent(jLabel2)
+                .addGroup(jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
+                    .addComponent(jLabel2, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                    .addComponent(JLabel_Cont_M, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                 .addComponent(jScrollPane1, javax.swing.GroupLayout.DEFAULT_SIZE, 301, Short.MAX_VALUE)
                 .addContainerGap())
         );
 
         JButton_Refresh.setText("Refresh");
+        JButton_Refresh.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                JButton_RefreshActionPerformed(evt);
+            }
+        });
 
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
         getContentPane().setLayout(layout);
@@ -172,15 +205,68 @@ public class Query_Gui extends javax.swing.JInternalFrame {
         pack();
     }// </editor-fold>//GEN-END:initComponents
 
+    private void JButton_RefreshActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_JButton_RefreshActionPerformed
+        // TODO add your handling code here:
+        Connection cn;
+        Statement st;
+        Statement st2;
+        ResultSet rs;
+        ResultSet rs2;
+         DefaultListModel model = new DefaultListModel();
+          DefaultListModel model2 = new DefaultListModel();
+        try {
+                     
+
+            cn = (Connection) DriverManager.getConnection("jdbc:mysql://127.0.0.1:3306/ciercom_pre_matricula", "Zoidiano0", "Zoidiano0!");
+                       
+
+            st = (Statement) cn.createStatement();
+            String s = "select * from estudiante where Estado_Matricula = 0";
+            rs = st.executeQuery(s);
+           int cnt=0;
+            while (rs.next()) {        
+               
+                model.addElement(rs.getString(2));
+                cnt++;
+                JLabel_ContNo.setText(String.valueOf(cnt));
+                
+            }
+            Jlist_NM.setModel(model);
+            
+            
+            //LLenando ya matriculados
+             cn = (Connection) DriverManager.getConnection("jdbc:mysql://127.0.0.1:3306/ciercom_pre_matricula", "Zoidiano0", "Zoidiano0!");
+            st2 = (Statement) cn.createStatement();
+            String s2 = "select * from estudiante where Estado_Matricula = 1";
+            rs2 = st.executeQuery(s2);
+           int cnt2=0;
+            while (rs2.next()) {        
+               
+                model2.addElement(rs2.getString(1)+rs2.getString(2));
+                cnt2++;
+                JLabel_Cont_M.setText(String.valueOf(cnt2));
+                
+            }
+            Jlist_Mat.setModel(model2);
+            
+            
+            
+            
+        } catch (Exception e) {
+            System.out.println(e);
+        }
+    }//GEN-LAST:event_JButton_RefreshActionPerformed
+
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
     private javax.swing.JButton JButton_Refresh;
     private javax.swing.JLabel JLabel_ContNo;
+    private javax.swing.JLabel JLabel_Cont_M;
+    private javax.swing.JList<String> Jlist_Mat;
+    private javax.swing.JList<String> Jlist_NM;
     private javax.swing.JScrollPane SCroll_No_Mat;
     private javax.swing.JLabel jLabel1;
     private javax.swing.JLabel jLabel2;
-    private javax.swing.JList<String> jList1;
-    private javax.swing.JList<String> jList2;
     private javax.swing.JPanel jPanel1;
     private javax.swing.JPanel jPanel2;
     private javax.swing.JScrollPane jScrollPane1;

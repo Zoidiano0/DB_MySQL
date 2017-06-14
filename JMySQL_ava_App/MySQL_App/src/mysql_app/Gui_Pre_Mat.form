@@ -35,7 +35,7 @@
                                   <EmptySpace max="32767" attributes="0"/>
                               </Group>
                               <Group type="102" alignment="1" attributes="0">
-                                  <Component id="jToggleButton1" min="-2" max="-2" attributes="0"/>
+                                  <Component id="JB_Save" min="-2" max="-2" attributes="0"/>
                                   <EmptySpace max="32767" attributes="0"/>
                               </Group>
                           </Group>
@@ -53,67 +53,67 @@
                           </Group>
                           <EmptySpace min="-2" pref="38" max="-2" attributes="0"/>
                           <Group type="103" groupAlignment="0" attributes="0">
-                              <Component id="jLabel13" min="-2" pref="457" max="-2" attributes="0"/>
+                              <Component id="JT_Name_Display" min="-2" pref="457" max="-2" attributes="0"/>
                               <Group type="102" attributes="0">
                                   <Group type="103" groupAlignment="0" attributes="0">
-                                      <Component id="jComboBox1" alignment="0" min="-2" max="-2" attributes="0"/>
-                                      <Component id="jComboBox2" alignment="0" min="-2" max="-2" attributes="0"/>
-                                      <Component id="jComboBox3" alignment="0" min="-2" max="-2" attributes="0"/>
-                                      <Component id="jComboBox4" alignment="0" min="-2" max="-2" attributes="0"/>
-                                      <Component id="jComboBox5" alignment="0" min="-2" max="-2" attributes="0"/>
-                                      <Component id="jComboBox6" alignment="0" min="-2" max="-2" attributes="0"/>
-                                      <Component id="jComboBox7" alignment="0" min="-2" max="-2" attributes="0"/>
+                                      <Component id="JCB_M1" alignment="0" min="-2" max="-2" attributes="0"/>
+                                      <Component id="JCB_M2" alignment="0" min="-2" max="-2" attributes="0"/>
+                                      <Component id="JCB_M3" alignment="0" min="-2" max="-2" attributes="0"/>
+                                      <Component id="JCB_M4" alignment="0" min="-2" max="-2" attributes="0"/>
+                                      <Component id="JCB_M5" alignment="0" min="-2" max="-2" attributes="0"/>
+                                      <Component id="JCB_M6" alignment="0" min="-2" max="-2" attributes="0"/>
+                                      <Component id="JCB_M7" alignment="0" min="-2" max="-2" attributes="0"/>
                                   </Group>
                                   <EmptySpace min="-2" pref="54" max="-2" attributes="0"/>
                                   <Group type="103" groupAlignment="0" attributes="0">
                                       <Group type="102" alignment="0" attributes="0">
-                                          <Component id="jRadioButton19" min="-2" max="-2" attributes="0"/>
+                                          <Component id="JRB_M7_1" min="-2" max="-2" attributes="0"/>
                                           <EmptySpace type="separate" max="-2" attributes="0"/>
-                                          <Component id="jRadioButton20" min="-2" max="-2" attributes="0"/>
+                                          <Component id="JRB_M7_2" min="-2" max="-2" attributes="0"/>
                                           <EmptySpace type="unrelated" max="-2" attributes="0"/>
-                                          <Component id="jRadioButton21" min="-2" max="-2" attributes="0"/>
+                                          <Component id="JRB_M7_3" min="-2" max="-2" attributes="0"/>
                                       </Group>
                                       <Group type="102" alignment="0" attributes="0">
-                                          <Component id="jRadioButton16" min="-2" max="-2" attributes="0"/>
+                                          <Component id="JRB_M6_1" min="-2" max="-2" attributes="0"/>
                                           <EmptySpace type="separate" max="-2" attributes="0"/>
-                                          <Component id="jRadioButton17" min="-2" max="-2" attributes="0"/>
+                                          <Component id="JRB_M6_2" min="-2" max="-2" attributes="0"/>
                                           <EmptySpace type="unrelated" max="-2" attributes="0"/>
-                                          <Component id="jRadioButton18" min="-2" max="-2" attributes="0"/>
+                                          <Component id="JRB_M6_3" min="-2" max="-2" attributes="0"/>
                                       </Group>
                                       <Group type="102" alignment="0" attributes="0">
-                                          <Component id="jRadioButton13" min="-2" max="-2" attributes="0"/>
+                                          <Component id="JRB_M5_1" min="-2" max="-2" attributes="0"/>
                                           <EmptySpace type="separate" max="-2" attributes="0"/>
-                                          <Component id="jRadioButton14" min="-2" max="-2" attributes="0"/>
+                                          <Component id="JRB_M5_2" min="-2" max="-2" attributes="0"/>
                                           <EmptySpace type="unrelated" max="-2" attributes="0"/>
-                                          <Component id="jRadioButton15" min="-2" max="-2" attributes="0"/>
+                                          <Component id="JRB_M5_3" min="-2" max="-2" attributes="0"/>
                                       </Group>
                                       <Group type="102" alignment="0" attributes="0">
-                                          <Component id="jRadioButton10" min="-2" max="-2" attributes="0"/>
+                                          <Component id="JRB_M4_1" min="-2" max="-2" attributes="0"/>
                                           <EmptySpace type="separate" max="-2" attributes="0"/>
-                                          <Component id="jRadioButton11" min="-2" max="-2" attributes="0"/>
+                                          <Component id="JRB_M4_2" min="-2" max="-2" attributes="0"/>
                                           <EmptySpace type="unrelated" max="-2" attributes="0"/>
-                                          <Component id="jRadioButton12" min="-2" max="-2" attributes="0"/>
+                                          <Component id="JRB_M4_3" min="-2" max="-2" attributes="0"/>
                                       </Group>
                                       <Group type="102" alignment="0" attributes="0">
-                                          <Component id="jRadioButton7" min="-2" max="-2" attributes="0"/>
+                                          <Component id="JRB_M3_1" min="-2" max="-2" attributes="0"/>
                                           <EmptySpace type="separate" max="-2" attributes="0"/>
-                                          <Component id="jRadioButton8" min="-2" max="-2" attributes="0"/>
+                                          <Component id="JRB_M3_2" min="-2" max="-2" attributes="0"/>
                                           <EmptySpace type="unrelated" max="-2" attributes="0"/>
-                                          <Component id="jRadioButton9" min="-2" max="-2" attributes="0"/>
+                                          <Component id="JRB_M3_3" min="-2" max="-2" attributes="0"/>
                                       </Group>
                                       <Group type="102" alignment="0" attributes="0">
-                                          <Component id="jRadioButton4" min="-2" max="-2" attributes="0"/>
+                                          <Component id="JRB_M2_1" min="-2" max="-2" attributes="0"/>
                                           <EmptySpace type="separate" max="-2" attributes="0"/>
-                                          <Component id="jRadioButton5" min="-2" max="-2" attributes="0"/>
+                                          <Component id="JRB_M2_2" min="-2" max="-2" attributes="0"/>
                                           <EmptySpace type="unrelated" max="-2" attributes="0"/>
-                                          <Component id="jRadioButton6" min="-2" max="-2" attributes="0"/>
+                                          <Component id="JRB_M2_3" min="-2" max="-2" attributes="0"/>
                                       </Group>
                                       <Group type="102" alignment="0" attributes="0">
-                                          <Component id="jRadioButton1" min="-2" max="-2" attributes="0"/>
+                                          <Component id="JRB_M1_1" min="-2" max="-2" attributes="0"/>
                                           <EmptySpace type="separate" max="-2" attributes="0"/>
-                                          <Component id="jRadioButton2" min="-2" max="-2" attributes="0"/>
+                                          <Component id="JRB_M1_2" min="-2" max="-2" attributes="0"/>
                                           <EmptySpace type="unrelated" max="-2" attributes="0"/>
-                                          <Component id="jRadioButton3" min="-2" max="-2" attributes="0"/>
+                                          <Component id="JRB_M1_3" min="-2" max="-2" attributes="0"/>
                                       </Group>
                                   </Group>
                               </Group>
@@ -130,9 +130,9 @@
                       <EmptySpace min="-2" pref="56" max="-2" attributes="0"/>
                       <Component id="jLabel2" min="-2" max="-2" attributes="0"/>
                       <EmptySpace type="separate" max="-2" attributes="0"/>
-                      <Component id="jTextField1" min="-2" pref="110" max="-2" attributes="0"/>
+                      <Component id="JT_Cedula" min="-2" pref="110" max="-2" attributes="0"/>
                       <EmptySpace type="separate" max="-2" attributes="0"/>
-                      <Component id="jButton1" min="-2" max="-2" attributes="0"/>
+                      <Component id="JB_Search" min="-2" max="-2" attributes="0"/>
                   </Group>
                   <Group type="102" alignment="0" attributes="0">
                       <EmptySpace min="-2" pref="16" max="-2" attributes="0"/>
@@ -153,77 +153,77 @@
               <Component id="jLabel1" min="-2" max="-2" attributes="0"/>
               <EmptySpace type="unrelated" max="-2" attributes="0"/>
               <Group type="103" groupAlignment="3" attributes="0">
-                  <Component id="jTextField1" alignment="3" min="-2" max="-2" attributes="0"/>
+                  <Component id="JT_Cedula" alignment="3" min="-2" max="-2" attributes="0"/>
                   <Component id="jLabel2" alignment="3" min="-2" max="-2" attributes="0"/>
-                  <Component id="jButton1" alignment="3" min="-2" max="-2" attributes="0"/>
+                  <Component id="JB_Search" alignment="3" min="-2" max="-2" attributes="0"/>
               </Group>
               <EmptySpace max="-2" attributes="0"/>
               <Component id="jLabel3" min="-2" max="-2" attributes="0"/>
               <EmptySpace type="unrelated" max="-2" attributes="0"/>
               <Group type="103" groupAlignment="0" max="-2" attributes="0">
                   <Component id="jLabel12" max="32767" attributes="0"/>
-                  <Component id="jLabel13" max="32767" attributes="0"/>
+                  <Component id="JT_Name_Display" max="32767" attributes="0"/>
               </Group>
               <EmptySpace type="unrelated" max="-2" attributes="0"/>
               <Component id="jLabel11" min="-2" max="-2" attributes="0"/>
               <EmptySpace max="-2" attributes="0"/>
               <Group type="103" groupAlignment="3" attributes="0">
-                  <Component id="jComboBox1" alignment="3" min="-2" max="-2" attributes="0"/>
+                  <Component id="JCB_M1" alignment="3" min="-2" max="-2" attributes="0"/>
                   <Component id="jLabel4" alignment="3" min="-2" max="-2" attributes="0"/>
-                  <Component id="jRadioButton1" alignment="3" min="-2" max="-2" attributes="0"/>
-                  <Component id="jRadioButton2" alignment="3" min="-2" max="-2" attributes="0"/>
-                  <Component id="jRadioButton3" alignment="3" min="-2" max="-2" attributes="0"/>
+                  <Component id="JRB_M1_1" alignment="3" min="-2" max="-2" attributes="0"/>
+                  <Component id="JRB_M1_2" alignment="3" min="-2" max="-2" attributes="0"/>
+                  <Component id="JRB_M1_3" alignment="3" min="-2" max="-2" attributes="0"/>
               </Group>
               <EmptySpace type="unrelated" max="-2" attributes="0"/>
               <Group type="103" groupAlignment="3" attributes="0">
                   <Component id="jLabel5" alignment="3" min="-2" max="-2" attributes="0"/>
-                  <Component id="jComboBox2" alignment="3" min="-2" max="-2" attributes="0"/>
-                  <Component id="jRadioButton4" alignment="3" min="-2" max="-2" attributes="0"/>
-                  <Component id="jRadioButton5" alignment="3" min="-2" max="-2" attributes="0"/>
-                  <Component id="jRadioButton6" alignment="3" min="-2" max="-2" attributes="0"/>
+                  <Component id="JCB_M2" alignment="3" min="-2" max="-2" attributes="0"/>
+                  <Component id="JRB_M2_1" alignment="3" min="-2" max="-2" attributes="0"/>
+                  <Component id="JRB_M2_2" alignment="3" min="-2" max="-2" attributes="0"/>
+                  <Component id="JRB_M2_3" alignment="3" min="-2" max="-2" attributes="0"/>
               </Group>
               <EmptySpace type="unrelated" max="-2" attributes="0"/>
               <Group type="103" groupAlignment="3" attributes="0">
                   <Component id="jLabel6" alignment="3" min="-2" max="-2" attributes="0"/>
-                  <Component id="jComboBox3" alignment="3" min="-2" max="-2" attributes="0"/>
-                  <Component id="jRadioButton7" alignment="3" min="-2" max="-2" attributes="0"/>
-                  <Component id="jRadioButton8" alignment="3" min="-2" max="-2" attributes="0"/>
-                  <Component id="jRadioButton9" alignment="3" min="-2" max="-2" attributes="0"/>
+                  <Component id="JCB_M3" alignment="3" min="-2" max="-2" attributes="0"/>
+                  <Component id="JRB_M3_1" alignment="3" min="-2" max="-2" attributes="0"/>
+                  <Component id="JRB_M3_2" alignment="3" min="-2" max="-2" attributes="0"/>
+                  <Component id="JRB_M3_3" alignment="3" min="-2" max="-2" attributes="0"/>
               </Group>
               <EmptySpace type="unrelated" max="-2" attributes="0"/>
               <Group type="103" groupAlignment="3" attributes="0">
                   <Component id="jLabel7" alignment="3" min="-2" max="-2" attributes="0"/>
-                  <Component id="jComboBox4" alignment="3" min="-2" max="-2" attributes="0"/>
-                  <Component id="jRadioButton10" alignment="3" min="-2" max="-2" attributes="0"/>
-                  <Component id="jRadioButton11" alignment="3" min="-2" max="-2" attributes="0"/>
-                  <Component id="jRadioButton12" alignment="3" min="-2" max="-2" attributes="0"/>
+                  <Component id="JCB_M4" alignment="3" min="-2" max="-2" attributes="0"/>
+                  <Component id="JRB_M4_1" alignment="3" min="-2" max="-2" attributes="0"/>
+                  <Component id="JRB_M4_2" alignment="3" min="-2" max="-2" attributes="0"/>
+                  <Component id="JRB_M4_3" alignment="3" min="-2" max="-2" attributes="0"/>
               </Group>
               <EmptySpace type="unrelated" max="-2" attributes="0"/>
               <Group type="103" groupAlignment="3" attributes="0">
                   <Component id="jLabel8" alignment="3" min="-2" max="-2" attributes="0"/>
-                  <Component id="jComboBox5" alignment="3" min="-2" max="-2" attributes="0"/>
-                  <Component id="jRadioButton13" alignment="3" min="-2" max="-2" attributes="0"/>
-                  <Component id="jRadioButton14" alignment="3" min="-2" max="-2" attributes="0"/>
-                  <Component id="jRadioButton15" alignment="3" min="-2" max="-2" attributes="0"/>
+                  <Component id="JCB_M5" alignment="3" min="-2" max="-2" attributes="0"/>
+                  <Component id="JRB_M5_1" alignment="3" min="-2" max="-2" attributes="0"/>
+                  <Component id="JRB_M5_2" alignment="3" min="-2" max="-2" attributes="0"/>
+                  <Component id="JRB_M5_3" alignment="3" min="-2" max="-2" attributes="0"/>
               </Group>
               <EmptySpace type="unrelated" max="-2" attributes="0"/>
               <Group type="103" groupAlignment="3" attributes="0">
                   <Component id="jLabel9" alignment="3" min="-2" max="-2" attributes="0"/>
-                  <Component id="jComboBox6" alignment="3" min="-2" max="-2" attributes="0"/>
-                  <Component id="jRadioButton16" alignment="3" min="-2" max="-2" attributes="0"/>
-                  <Component id="jRadioButton17" alignment="3" min="-2" max="-2" attributes="0"/>
-                  <Component id="jRadioButton18" alignment="3" min="-2" max="-2" attributes="0"/>
+                  <Component id="JCB_M6" alignment="3" min="-2" max="-2" attributes="0"/>
+                  <Component id="JRB_M6_1" alignment="3" min="-2" max="-2" attributes="0"/>
+                  <Component id="JRB_M6_2" alignment="3" min="-2" max="-2" attributes="0"/>
+                  <Component id="JRB_M6_3" alignment="3" min="-2" max="-2" attributes="0"/>
               </Group>
               <EmptySpace type="unrelated" max="-2" attributes="0"/>
               <Group type="103" groupAlignment="3" attributes="0">
                   <Component id="jLabel10" alignment="3" min="-2" max="-2" attributes="0"/>
-                  <Component id="jComboBox7" alignment="3" min="-2" max="-2" attributes="0"/>
-                  <Component id="jRadioButton19" alignment="3" min="-2" max="-2" attributes="0"/>
-                  <Component id="jRadioButton20" alignment="3" min="-2" max="-2" attributes="0"/>
-                  <Component id="jRadioButton21" alignment="3" min="-2" max="-2" attributes="0"/>
+                  <Component id="JCB_M7" alignment="3" min="-2" max="-2" attributes="0"/>
+                  <Component id="JRB_M7_1" alignment="3" min="-2" max="-2" attributes="0"/>
+                  <Component id="JRB_M7_2" alignment="3" min="-2" max="-2" attributes="0"/>
+                  <Component id="JRB_M7_3" alignment="3" min="-2" max="-2" attributes="0"/>
               </Group>
               <EmptySpace type="unrelated" max="-2" attributes="0"/>
-              <Component id="jToggleButton1" min="-2" max="-2" attributes="0"/>
+              <Component id="JB_Save" min="-2" max="-2" attributes="0"/>
               <EmptySpace min="0" pref="9" max="32767" attributes="0"/>
           </Group>
       </Group>
@@ -235,24 +235,27 @@
         <Property name="text" type="java.lang.String" value="Pre-Matr&#xed;cula CIERCOM"/>
       </Properties>
     </Component>
-    <Component class="javax.swing.JTextField" name="jTextField1">
+    <Component class="javax.swing.JTextField" name="JT_Cedula">
     </Component>
     <Component class="javax.swing.JLabel" name="jLabel2">
       <Properties>
         <Property name="text" type="java.lang.String" value="Ingrese Su Cedula:"/>
       </Properties>
     </Component>
-    <Component class="javax.swing.JButton" name="jButton1">
+    <Component class="javax.swing.JButton" name="JB_Search">
       <Properties>
         <Property name="text" type="java.lang.String" value="Consular"/>
       </Properties>
+      <Events>
+        <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="JB_SearchActionPerformed"/>
+      </Events>
     </Component>
     <Component class="javax.swing.JLabel" name="jLabel3">
       <Properties>
         <Property name="text" type="java.lang.String" value="Por Favor Seleccione Las Materias en las que usted espera poder matricularse le proximo semestre "/>
       </Properties>
     </Component>
-    <Component class="javax.swing.JComboBox" name="jComboBox1">
+    <Component class="javax.swing.JComboBox" name="JCB_M1">
       <Properties>
         <Property name="model" type="javax.swing.ComboBoxModel" editor="org.netbeans.modules.form.editors2.ComboBoxModelEditor">
           <StringArray count="4">
@@ -297,7 +300,7 @@
         <Property name="text" type="java.lang.String" value="Materia 6"/>
       </Properties>
     </Component>
-    <Component class="javax.swing.JComboBox" name="jComboBox2">
+    <Component class="javax.swing.JComboBox" name="JCB_M2">
       <Properties>
         <Property name="model" type="javax.swing.ComboBoxModel" editor="org.netbeans.modules.form.editors2.ComboBoxModelEditor">
           <StringArray count="4">
@@ -312,7 +315,7 @@
         <AuxValue name="JavaCodeGenerator_TypeParameters" type="java.lang.String" value="&lt;String&gt;"/>
       </AuxValues>
     </Component>
-    <Component class="javax.swing.JComboBox" name="jComboBox3">
+    <Component class="javax.swing.JComboBox" name="JCB_M3">
       <Properties>
         <Property name="model" type="javax.swing.ComboBoxModel" editor="org.netbeans.modules.form.editors2.ComboBoxModelEditor">
           <StringArray count="4">
@@ -327,7 +330,7 @@
         <AuxValue name="JavaCodeGenerator_TypeParameters" type="java.lang.String" value="&lt;String&gt;"/>
       </AuxValues>
     </Component>
-    <Component class="javax.swing.JComboBox" name="jComboBox4">
+    <Component class="javax.swing.JComboBox" name="JCB_M4">
       <Properties>
         <Property name="model" type="javax.swing.ComboBoxModel" editor="org.netbeans.modules.form.editors2.ComboBoxModelEditor">
           <StringArray count="4">
@@ -342,7 +345,7 @@
         <AuxValue name="JavaCodeGenerator_TypeParameters" type="java.lang.String" value="&lt;String&gt;"/>
       </AuxValues>
     </Component>
-    <Component class="javax.swing.JComboBox" name="jComboBox5">
+    <Component class="javax.swing.JComboBox" name="JCB_M5">
       <Properties>
         <Property name="model" type="javax.swing.ComboBoxModel" editor="org.netbeans.modules.form.editors2.ComboBoxModelEditor">
           <StringArray count="4">
@@ -357,7 +360,7 @@
         <AuxValue name="JavaCodeGenerator_TypeParameters" type="java.lang.String" value="&lt;String&gt;"/>
       </AuxValues>
     </Component>
-    <Component class="javax.swing.JComboBox" name="jComboBox6">
+    <Component class="javax.swing.JComboBox" name="JCB_M6">
       <Properties>
         <Property name="model" type="javax.swing.ComboBoxModel" editor="org.netbeans.modules.form.editors2.ComboBoxModelEditor">
           <StringArray count="4">
@@ -377,7 +380,7 @@
         <Property name="text" type="java.lang.String" value="Materia 7"/>
       </Properties>
     </Component>
-    <Component class="javax.swing.JComboBox" name="jComboBox7">
+    <Component class="javax.swing.JComboBox" name="JCB_M7">
       <Properties>
         <Property name="model" type="javax.swing.ComboBoxModel" editor="org.netbeans.modules.form.editors2.ComboBoxModelEditor">
           <StringArray count="4">
@@ -392,18 +395,18 @@
         <AuxValue name="JavaCodeGenerator_TypeParameters" type="java.lang.String" value="&lt;String&gt;"/>
       </AuxValues>
     </Component>
-    <Component class="javax.swing.JRadioButton" name="jRadioButton1">
+    <Component class="javax.swing.JRadioButton" name="JRB_M1_1">
       <Properties>
         <Property name="selected" type="boolean" value="true"/>
         <Property name="text" type="java.lang.String" value="1"/>
       </Properties>
     </Component>
-    <Component class="javax.swing.JRadioButton" name="jRadioButton2">
+    <Component class="javax.swing.JRadioButton" name="JRB_M1_2">
       <Properties>
         <Property name="text" type="java.lang.String" value="2"/>
       </Properties>
     </Component>
-    <Component class="javax.swing.JRadioButton" name="jRadioButton3">
+    <Component class="javax.swing.JRadioButton" name="JRB_M1_3">
       <Properties>
         <Property name="text" type="java.lang.String" value="3"/>
       </Properties>
@@ -413,98 +416,98 @@
         <Property name="text" type="java.lang.String" value="# Matr&#xed;cula"/>
       </Properties>
     </Component>
-    <Component class="javax.swing.JRadioButton" name="jRadioButton4">
+    <Component class="javax.swing.JRadioButton" name="JRB_M2_1">
       <Properties>
         <Property name="selected" type="boolean" value="true"/>
         <Property name="text" type="java.lang.String" value="1"/>
       </Properties>
     </Component>
-    <Component class="javax.swing.JRadioButton" name="jRadioButton5">
+    <Component class="javax.swing.JRadioButton" name="JRB_M2_2">
       <Properties>
         <Property name="text" type="java.lang.String" value="2"/>
       </Properties>
     </Component>
-    <Component class="javax.swing.JRadioButton" name="jRadioButton6">
+    <Component class="javax.swing.JRadioButton" name="JRB_M2_3">
       <Properties>
         <Property name="text" type="java.lang.String" value="3"/>
       </Properties>
     </Component>
-    <Component class="javax.swing.JRadioButton" name="jRadioButton7">
+    <Component class="javax.swing.JRadioButton" name="JRB_M3_1">
       <Properties>
         <Property name="selected" type="boolean" value="true"/>
         <Property name="text" type="java.lang.String" value="1"/>
       </Properties>
     </Component>
-    <Component class="javax.swing.JRadioButton" name="jRadioButton8">
+    <Component class="javax.swing.JRadioButton" name="JRB_M3_2">
       <Properties>
         <Property name="text" type="java.lang.String" value="2"/>
       </Properties>
     </Component>
-    <Component class="javax.swing.JRadioButton" name="jRadioButton9">
+    <Component class="javax.swing.JRadioButton" name="JRB_M3_3">
       <Properties>
         <Property name="text" type="java.lang.String" value="3"/>
       </Properties>
     </Component>
-    <Component class="javax.swing.JRadioButton" name="jRadioButton10">
+    <Component class="javax.swing.JRadioButton" name="JRB_M4_1">
       <Properties>
         <Property name="selected" type="boolean" value="true"/>
         <Property name="text" type="java.lang.String" value="1"/>
       </Properties>
     </Component>
-    <Component class="javax.swing.JRadioButton" name="jRadioButton11">
+    <Component class="javax.swing.JRadioButton" name="JRB_M4_2">
       <Properties>
         <Property name="text" type="java.lang.String" value="2"/>
       </Properties>
     </Component>
-    <Component class="javax.swing.JRadioButton" name="jRadioButton12">
+    <Component class="javax.swing.JRadioButton" name="JRB_M4_3">
       <Properties>
         <Property name="text" type="java.lang.String" value="3"/>
       </Properties>
     </Component>
-    <Component class="javax.swing.JRadioButton" name="jRadioButton13">
+    <Component class="javax.swing.JRadioButton" name="JRB_M5_1">
       <Properties>
         <Property name="selected" type="boolean" value="true"/>
         <Property name="text" type="java.lang.String" value="1"/>
       </Properties>
     </Component>
-    <Component class="javax.swing.JRadioButton" name="jRadioButton14">
+    <Component class="javax.swing.JRadioButton" name="JRB_M5_2">
       <Properties>
         <Property name="text" type="java.lang.String" value="2"/>
       </Properties>
     </Component>
-    <Component class="javax.swing.JRadioButton" name="jRadioButton15">
+    <Component class="javax.swing.JRadioButton" name="JRB_M5_3">
       <Properties>
         <Property name="text" type="java.lang.String" value="3"/>
       </Properties>
     </Component>
-    <Component class="javax.swing.JRadioButton" name="jRadioButton16">
+    <Component class="javax.swing.JRadioButton" name="JRB_M6_1">
       <Properties>
         <Property name="selected" type="boolean" value="true"/>
         <Property name="text" type="java.lang.String" value="1"/>
       </Properties>
     </Component>
-    <Component class="javax.swing.JRadioButton" name="jRadioButton17">
+    <Component class="javax.swing.JRadioButton" name="JRB_M6_2">
       <Properties>
         <Property name="text" type="java.lang.String" value="2"/>
       </Properties>
     </Component>
-    <Component class="javax.swing.JRadioButton" name="jRadioButton18">
+    <Component class="javax.swing.JRadioButton" name="JRB_M6_3">
       <Properties>
         <Property name="text" type="java.lang.String" value="3"/>
       </Properties>
     </Component>
-    <Component class="javax.swing.JRadioButton" name="jRadioButton19">
+    <Component class="javax.swing.JRadioButton" name="JRB_M7_1">
       <Properties>
         <Property name="selected" type="boolean" value="true"/>
         <Property name="text" type="java.lang.String" value="1"/>
       </Properties>
     </Component>
-    <Component class="javax.swing.JRadioButton" name="jRadioButton20">
+    <Component class="javax.swing.JRadioButton" name="JRB_M7_2">
       <Properties>
         <Property name="text" type="java.lang.String" value="2"/>
       </Properties>
     </Component>
-    <Component class="javax.swing.JRadioButton" name="jRadioButton21">
+    <Component class="javax.swing.JRadioButton" name="JRB_M7_3">
       <Properties>
         <Property name="text" type="java.lang.String" value="3"/>
       </Properties>
@@ -514,9 +517,12 @@
         <Property name="text" type="java.lang.String" value="Estudiante"/>
       </Properties>
     </Component>
-    <Component class="javax.swing.JLabel" name="jLabel13">
+    <Component class="javax.swing.JLabel" name="JT_Name_Display">
+      <Properties>
+        <Property name="text" type="java.lang.String" value="Nombre Estudiante"/>
+      </Properties>
     </Component>
-    <Component class="javax.swing.JToggleButton" name="jToggleButton1">
+    <Component class="javax.swing.JToggleButton" name="JB_Save">
       <Properties>
         <Property name="text" type="java.lang.String" value="Guardar"/>
       </Properties>
