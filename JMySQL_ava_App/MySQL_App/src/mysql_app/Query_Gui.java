@@ -47,7 +47,7 @@ public class Query_Gui extends javax.swing.JInternalFrame {
            cnt=0;
             while (rs.next()) {        
                
-                model.addElement(rs.getString(1)+rs.getString(2));
+                model.addElement(rs.getString(1)+" "+rs.getString(2));
                 cnt++;
                 
                 
@@ -65,7 +65,7 @@ public class Query_Gui extends javax.swing.JInternalFrame {
             cnt2=0;
             while (rs2.next()) {        
                
-                model2.addElement(rs2.getString(1)+rs2.getString(2));
+                model2.addElement(rs2.getString(1)+" "+rs2.getString(2));
                 cnt2++;
                
                 
@@ -239,7 +239,7 @@ public class Query_Gui extends javax.swing.JInternalFrame {
            cnt=0;
             while (rs.next()) {        
                
-                model.addElement(rs.getString(1)+rs.getString(2));
+                model.addElement(rs.getString(1)+" "+rs.getString(2));
                 cnt++;
                 
                 
@@ -257,7 +257,7 @@ public class Query_Gui extends javax.swing.JInternalFrame {
             cnt2=0;
             while (rs2.next()) {        
                
-                model2.addElement(rs2.getString(1)+rs2.getString(2));
+                model2.addElement(rs2.getString(1)+" "+rs2.getString(2));
                 cnt2++;
                
                 

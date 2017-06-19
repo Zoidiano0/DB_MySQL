@@ -38,7 +38,6 @@ public class Gui_Pre_Mat extends javax.swing.JInternalFrame {
     // <editor-fold defaultstate="collapsed" desc="Generated Code">//GEN-BEGIN:initComponents
     private void initComponents() {
 
-        jLabel1 = new javax.swing.JLabel();
         JT_Cedula = new javax.swing.JTextField();
         jLabel2 = new javax.swing.JLabel();
         JB_Search = new javax.swing.JButton();
@@ -83,10 +82,12 @@ public class Gui_Pre_Mat extends javax.swing.JInternalFrame {
         JT_Name_Display = new javax.swing.JLabel();
         JB_Save = new javax.swing.JToggleButton();
 
+        setIconifiable(true);
+        setMaximizable(true);
+        setResizable(true);
+        setTitle("Pre-Matricula CIERCOM");
         setAlignmentX(256.0F);
         setAlignmentY(256.0F);
-
-        jLabel1.setText("Pre-Matrícula CIERCOM");
 
         jLabel2.setText("Ingrese Su Cedula:");
 
@@ -99,7 +100,7 @@ public class Gui_Pre_Mat extends javax.swing.JInternalFrame {
 
         jLabel3.setText("Por Favor Seleccione Las Materias en las que usted espera poder matricularse le proximo semestre ");
 
-        JCB_M1.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "Item 1", "Item 2", "Item 3", "Item 4" }));
+        JCB_M1.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { }));
 
         jLabel4.setText("Materia 1");
 
@@ -113,70 +114,175 @@ public class Gui_Pre_Mat extends javax.swing.JInternalFrame {
 
         jLabel9.setText("Materia 6");
 
-        JCB_M2.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "Item 1", "Item 2", "Item 3", "Item 4" }));
+        JCB_M2.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] {}));
 
-        JCB_M3.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "Item 1", "Item 2", "Item 3", "Item 4" }));
+        JCB_M3.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { }));
 
-        JCB_M4.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "Item 1", "Item 2", "Item 3", "Item 4" }));
+        JCB_M4.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { }));
 
-        JCB_M5.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "Item 1", "Item 2", "Item 3", "Item 4" }));
+        JCB_M5.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { }));
 
-        JCB_M6.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "Item 1", "Item 2", "Item 3", "Item 4" }));
+        JCB_M6.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] {}));
 
         jLabel10.setText("Materia 7");
 
-        JCB_M7.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "Item 1", "Item 2", "Item 3", "Item 4" }));
+        JCB_M7.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { }));
 
         JRB_M1_1.setSelected(true);
         JRB_M1_1.setText("1");
+        JRB_M1_1.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                JRB_M1_1ActionPerformed(evt);
+            }
+        });
 
         JRB_M1_2.setText("2");
+        JRB_M1_2.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                JRB_M1_2ActionPerformed(evt);
+            }
+        });
 
         JRB_M1_3.setText("3");
+        JRB_M1_3.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                JRB_M1_3ActionPerformed(evt);
+            }
+        });
 
         jLabel11.setText("# Matrícula");
 
         JRB_M2_1.setSelected(true);
         JRB_M2_1.setText("1");
+        JRB_M2_1.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                JRB_M2_1ActionPerformed(evt);
+            }
+        });
 
         JRB_M2_2.setText("2");
+        JRB_M2_2.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                JRB_M2_2ActionPerformed(evt);
+            }
+        });
 
         JRB_M2_3.setText("3");
+        JRB_M2_3.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                JRB_M2_3ActionPerformed(evt);
+            }
+        });
 
         JRB_M3_1.setSelected(true);
         JRB_M3_1.setText("1");
+        JRB_M3_1.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                JRB_M3_1ActionPerformed(evt);
+            }
+        });
 
         JRB_M3_2.setText("2");
+        JRB_M3_2.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                JRB_M3_2ActionPerformed(evt);
+            }
+        });
 
         JRB_M3_3.setText("3");
+        JRB_M3_3.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                JRB_M3_3ActionPerformed(evt);
+            }
+        });
 
         JRB_M4_1.setSelected(true);
         JRB_M4_1.setText("1");
+        JRB_M4_1.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                JRB_M4_1ActionPerformed(evt);
+            }
+        });
 
         JRB_M4_2.setText("2");
+        JRB_M4_2.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                JRB_M4_2ActionPerformed(evt);
+            }
+        });
 
         JRB_M4_3.setText("3");
+        JRB_M4_3.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                JRB_M4_3ActionPerformed(evt);
+            }
+        });
 
         JRB_M5_1.setSelected(true);
         JRB_M5_1.setText("1");
+        JRB_M5_1.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                JRB_M5_1ActionPerformed(evt);
+            }
+        });
 
         JRB_M5_2.setText("2");
+        JRB_M5_2.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                JRB_M5_2ActionPerformed(evt);
+            }
+        });
 
         JRB_M5_3.setText("3");
+        JRB_M5_3.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                JRB_M5_3ActionPerformed(evt);
+            }
+        });
 
         JRB_M6_1.setSelected(true);
         JRB_M6_1.setText("1");
+        JRB_M6_1.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                JRB_M6_1ActionPerformed(evt);
+            }
+        });
 
         JRB_M6_2.setText("2");
+        JRB_M6_2.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                JRB_M6_2ActionPerformed(evt);
+            }
+        });
 
         JRB_M6_3.setText("3");
+        JRB_M6_3.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                JRB_M6_3ActionPerformed(evt);
+            }
+        });
 
         JRB_M7_1.setSelected(true);
         JRB_M7_1.setText("1");
+        JRB_M7_1.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                JRB_M7_1ActionPerformed(evt);
+            }
+        });
 
         JRB_M7_2.setText("2");
+        JRB_M7_2.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                JRB_M7_2ActionPerformed(evt);
+            }
+        });
 
         JRB_M7_3.setText("3");
+        JRB_M7_3.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                JRB_M7_3ActionPerformed(evt);
+            }
+        });
 
         jLabel12.setText("Estudiante");
 
@@ -189,88 +295,82 @@ public class Gui_Pre_Mat extends javax.swing.JInternalFrame {
         layout.setHorizontalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(layout.createSequentialGroup()
-                .addGap(31, 31, 31)
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                        .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, layout.createSequentialGroup()
-                            .addGap(200, 200, 200)
-                            .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                                .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, layout.createSequentialGroup()
+                    .addGroup(layout.createSequentialGroup()
+                        .addGap(31, 31, 31)
+                        .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                            .addGroup(layout.createSequentialGroup()
+                                .addGap(200, 200, 200)
+                                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                                     .addComponent(jLabel11)
-                                    .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
-                                .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, layout.createSequentialGroup()
-                                    .addComponent(JB_Save)
-                                    .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))))
-                        .addGroup(layout.createSequentialGroup()
-                            .addGap(6, 6, 6)
-                            .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
-                                .addComponent(jLabel5)
-                                .addComponent(jLabel4)
-                                .addComponent(jLabel6)
-                                .addComponent(jLabel7)
-                                .addComponent(jLabel8)
-                                .addComponent(jLabel9)
-                                .addComponent(jLabel10))
-                            .addGap(38, 38, 38)
-                            .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                                .addComponent(JT_Name_Display, javax.swing.GroupLayout.PREFERRED_SIZE, 457, javax.swing.GroupLayout.PREFERRED_SIZE)
-                                .addGroup(layout.createSequentialGroup()
-                                    .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                                        .addComponent(JCB_M1, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                                        .addComponent(JCB_M2, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                                        .addComponent(JCB_M3, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                                        .addComponent(JCB_M4, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                                        .addComponent(JCB_M5, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                                        .addComponent(JCB_M6, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                                        .addComponent(JCB_M7, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
-                                    .addGap(54, 54, 54)
-                                    .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                                        .addGroup(layout.createSequentialGroup()
-                                            .addComponent(JRB_M7_1)
-                                            .addGap(18, 18, 18)
-                                            .addComponent(JRB_M7_2)
-                                            .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
-                                            .addComponent(JRB_M7_3))
-                                        .addGroup(layout.createSequentialGroup()
-                                            .addComponent(JRB_M6_1)
-                                            .addGap(18, 18, 18)
-                                            .addComponent(JRB_M6_2)
-                                            .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
-                                            .addComponent(JRB_M6_3))
-                                        .addGroup(layout.createSequentialGroup()
-                                            .addComponent(JRB_M5_1)
-                                            .addGap(18, 18, 18)
-                                            .addComponent(JRB_M5_2)
-                                            .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
-                                            .addComponent(JRB_M5_3))
-                                        .addGroup(layout.createSequentialGroup()
-                                            .addComponent(JRB_M4_1)
-                                            .addGap(18, 18, 18)
-                                            .addComponent(JRB_M4_2)
-                                            .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
-                                            .addComponent(JRB_M4_3))
-                                        .addGroup(layout.createSequentialGroup()
-                                            .addComponent(JRB_M3_1)
-                                            .addGap(18, 18, 18)
-                                            .addComponent(JRB_M3_2)
-                                            .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
-                                            .addComponent(JRB_M3_3))
-                                        .addGroup(layout.createSequentialGroup()
-                                            .addComponent(JRB_M2_1)
-                                            .addGap(18, 18, 18)
-                                            .addComponent(JRB_M2_2)
-                                            .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
-                                            .addComponent(JRB_M2_3))
-                                        .addGroup(layout.createSequentialGroup()
-                                            .addComponent(JRB_M1_1)
-                                            .addGap(18, 18, 18)
-                                            .addComponent(JRB_M1_2)
-                                            .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
-                                            .addComponent(JRB_M1_3)))))
-                            .addContainerGap(36, Short.MAX_VALUE)))
-                    .addComponent(jLabel12)))
-            .addGroup(layout.createSequentialGroup()
-                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                                    .addComponent(JB_Save)))
+                            .addGroup(layout.createSequentialGroup()
+                                .addGap(6, 6, 6)
+                                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
+                                    .addComponent(jLabel5)
+                                    .addComponent(jLabel4)
+                                    .addComponent(jLabel6)
+                                    .addComponent(jLabel7)
+                                    .addComponent(jLabel8)
+                                    .addComponent(jLabel9)
+                                    .addComponent(jLabel10))
+                                .addGap(38, 38, 38)
+                                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                                    .addComponent(JT_Name_Display, javax.swing.GroupLayout.PREFERRED_SIZE, 457, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                    .addGroup(layout.createSequentialGroup()
+                                        .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
+                                            .addComponent(JCB_M2, 0, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                                            .addComponent(JCB_M3, 0, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                                            .addComponent(JCB_M4, 0, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                                            .addComponent(JCB_M5, 0, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                                            .addComponent(JCB_M6, 0, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                                            .addComponent(JCB_M7, 0, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                                            .addComponent(JCB_M1, 0, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
+                                        .addGap(54, 54, 54)
+                                        .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                                            .addGroup(layout.createSequentialGroup()
+                                                .addComponent(JRB_M7_1)
+                                                .addGap(18, 18, 18)
+                                                .addComponent(JRB_M7_2)
+                                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
+                                                .addComponent(JRB_M7_3))
+                                            .addGroup(layout.createSequentialGroup()
+                                                .addComponent(JRB_M6_1)
+                                                .addGap(18, 18, 18)
+                                                .addComponent(JRB_M6_2)
+                                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
+                                                .addComponent(JRB_M6_3))
+                                            .addGroup(layout.createSequentialGroup()
+                                                .addComponent(JRB_M5_1)
+                                                .addGap(18, 18, 18)
+                                                .addComponent(JRB_M5_2)
+                                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
+                                                .addComponent(JRB_M5_3))
+                                            .addGroup(layout.createSequentialGroup()
+                                                .addComponent(JRB_M4_1)
+                                                .addGap(18, 18, 18)
+                                                .addComponent(JRB_M4_2)
+                                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
+                                                .addComponent(JRB_M4_3))
+                                            .addGroup(layout.createSequentialGroup()
+                                                .addComponent(JRB_M3_1)
+                                                .addGap(18, 18, 18)
+                                                .addComponent(JRB_M3_2)
+                                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
+                                                .addComponent(JRB_M3_3))
+                                            .addGroup(layout.createSequentialGroup()
+                                                .addComponent(JRB_M2_1)
+                                                .addGap(18, 18, 18)
+                                                .addComponent(JRB_M2_2)
+                                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
+                                                .addComponent(JRB_M2_3))
+                                            .addGroup(layout.createSequentialGroup()
+                                                .addComponent(JRB_M1_1)
+                                                .addGap(18, 18, 18)
+                                                .addComponent(JRB_M1_2)
+                                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
+                                                .addComponent(JRB_M1_3))))))
+                            .addComponent(jLabel12)))
                     .addGroup(layout.createSequentialGroup()
                         .addGap(56, 56, 56)
                         .addComponent(jLabel2)
@@ -280,17 +380,13 @@ public class Gui_Pre_Mat extends javax.swing.JInternalFrame {
                         .addComponent(JB_Search))
                     .addGroup(layout.createSequentialGroup()
                         .addGap(16, 16, 16)
-                        .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                            .addComponent(jLabel3)
-                            .addComponent(jLabel1))))
-                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
+                        .addComponent(jLabel3)))
+                .addContainerGap(36, Short.MAX_VALUE))
         );
         layout.setVerticalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(layout.createSequentialGroup()
-                .addContainerGap()
-                .addComponent(jLabel1)
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
+                .addGap(19, 19, 19)
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                     .addComponent(JT_Cedula, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                     .addComponent(jLabel2)
@@ -354,7 +450,7 @@ public class Gui_Pre_Mat extends javax.swing.JInternalFrame {
                     .addComponent(JRB_M7_3))
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
                 .addComponent(JB_Save)
-                .addGap(0, 9, Short.MAX_VALUE))
+                .addGap(0, 24, Short.MAX_VALUE))
         );
 
         pack();
@@ -378,8 +474,220 @@ public class Gui_Pre_Mat extends javax.swing.JInternalFrame {
             
         }
         
-       
+        try {
+            con = (Connection) DriverManager.getConnection("jdbc:mysql://127.0.0.1:3306/ciercom_pre_matricula", "Zoidiano0", "Zoidiano0!");
+                       
+
+            st = (Statement) con.createStatement();
+            String s = "select * from materias";
+            rs = st.executeQuery(s);
+             while (rs.next()) {        
+               
+                JCB_M1.addItem(rs.getString(2));
+                JCB_M2.addItem(rs.getString(2));
+                JCB_M3.addItem(rs.getString(2));
+                JCB_M4.addItem(rs.getString(2));
+                JCB_M5.addItem(rs.getString(2));
+                JCB_M6.addItem(rs.getString(2));
+                JCB_M7.addItem(rs.getString(2));
+                
+                
+            }
+        } catch (Exception e) {
+        }
     }//GEN-LAST:event_JB_SearchActionPerformed
+
+    private void JRB_M1_1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_JRB_M1_1ActionPerformed
+
+        if(JRB_M1_1.isSelected()==true){
+            JRB_M1_2.setSelected(false);
+            JRB_M1_3.setSelected(false);
+            
+        }
+              
+    }//GEN-LAST:event_JRB_M1_1ActionPerformed
+
+    private void JRB_M1_2ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_JRB_M1_2ActionPerformed
+        // TODO add your handling code here:
+         if(JRB_M1_2.isSelected()==true){
+            JRB_M1_1.setSelected(false);
+            JRB_M1_3.setSelected(false);
+            
+        }
+        
+    }//GEN-LAST:event_JRB_M1_2ActionPerformed
+
+    private void JRB_M1_3ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_JRB_M1_3ActionPerformed
+        // TODO add your handling code here:
+        if(JRB_M1_3.isSelected()==true){
+            JRB_M1_2.setSelected(false);
+            JRB_M1_1.setSelected(false);
+            
+        }
+    }//GEN-LAST:event_JRB_M1_3ActionPerformed
+
+    private void JRB_M2_1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_JRB_M2_1ActionPerformed
+        // TODO add your handling code here:
+        if(JRB_M2_1.isSelected()==true){
+            JRB_M2_2.setSelected(false);
+            JRB_M2_3.setSelected(false);
+            
+        }
+          
+    }//GEN-LAST:event_JRB_M2_1ActionPerformed
+
+    private void JRB_M2_2ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_JRB_M2_2ActionPerformed
+        // TODO add your handling code here:
+        if(JRB_M2_2.isSelected()==true){
+            JRB_M2_1.setSelected(false);
+            JRB_M2_3.setSelected(false);
+            
+        }
+    }//GEN-LAST:event_JRB_M2_2ActionPerformed
+
+    private void JRB_M2_3ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_JRB_M2_3ActionPerformed
+        // TODO add your handling code here:
+        if(JRB_M2_3.isSelected()==true){
+            JRB_M2_2.setSelected(false);
+            JRB_M2_1.setSelected(false);
+            
+        }
+    }//GEN-LAST:event_JRB_M2_3ActionPerformed
+
+    private void JRB_M3_1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_JRB_M3_1ActionPerformed
+        // TODO add your handling code here:
+        if(JRB_M3_1.isSelected()==true){
+            JRB_M3_2.setSelected(false);
+            JRB_M3_3.setSelected(false);
+            
+        }
+    }//GEN-LAST:event_JRB_M3_1ActionPerformed
+
+    private void JRB_M3_2ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_JRB_M3_2ActionPerformed
+        // TODO add your handling code here:
+        if(JRB_M3_2.isSelected()==true){
+            JRB_M3_1.setSelected(false);
+            JRB_M3_3.setSelected(false);
+            
+        }
+    }//GEN-LAST:event_JRB_M3_2ActionPerformed
+
+    private void JRB_M3_3ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_JRB_M3_3ActionPerformed
+        // TODO add your handling code here:
+        if(JRB_M3_3.isSelected()==true){
+            JRB_M3_2.setSelected(false);
+            JRB_M3_1.setSelected(false);
+            
+        }
+    }//GEN-LAST:event_JRB_M3_3ActionPerformed
+
+    private void JRB_M4_1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_JRB_M4_1ActionPerformed
+        // TODO add your handling code here:
+        if(JRB_M4_1.isSelected()==true){
+            JRB_M4_2.setSelected(false);
+            JRB_M4_3.setSelected(false);
+            
+        }
+    }//GEN-LAST:event_JRB_M4_1ActionPerformed
+
+    private void JRB_M4_2ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_JRB_M4_2ActionPerformed
+        // TODO add your handling code here:
+        if(JRB_M4_2.isSelected()==true){
+            JRB_M4_1.setSelected(false);
+            JRB_M4_3.setSelected(false);
+            
+        }
+    }//GEN-LAST:event_JRB_M4_2ActionPerformed
+
+    private void JRB_M4_3ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_JRB_M4_3ActionPerformed
+        // TODO add your handling code here:
+        if(JRB_M4_3.isSelected()==true){
+            JRB_M4_2.setSelected(false);
+            JRB_M4_1.setSelected(false);
+            
+        }
+    }//GEN-LAST:event_JRB_M4_3ActionPerformed
+
+    private void JRB_M5_1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_JRB_M5_1ActionPerformed
+        // TODO add your handling code here:
+        if(JRB_M5_1.isSelected()==true){
+            JRB_M5_2.setSelected(false);
+            JRB_M5_3.setSelected(false);
+            
+        }
+    }//GEN-LAST:event_JRB_M5_1ActionPerformed
+
+    private void JRB_M5_2ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_JRB_M5_2ActionPerformed
+        // TODO add your handling code here:
+        if(JRB_M5_2.isSelected()==true){
+            JRB_M5_1.setSelected(false);
+            JRB_M5_3.setSelected(false);
+            
+        }
+    }//GEN-LAST:event_JRB_M5_2ActionPerformed
+
+    private void JRB_M5_3ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_JRB_M5_3ActionPerformed
+        // TODO add your handling code here:
+        if(JRB_M5_3.isSelected()==true){
+            JRB_M5_2.setSelected(false);
+            JRB_M5_1.setSelected(false);
+            
+        }
+    }//GEN-LAST:event_JRB_M5_3ActionPerformed
+
+    private void JRB_M6_1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_JRB_M6_1ActionPerformed
+        // TODO add your handling code here:
+        if(JRB_M6_1.isSelected()==true){
+            JRB_M6_2.setSelected(false);
+            JRB_M6_3.setSelected(false);
+            
+        }
+    }//GEN-LAST:event_JRB_M6_1ActionPerformed
+
+    private void JRB_M6_2ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_JRB_M6_2ActionPerformed
+        // TODO add your handling code here:
+        if(JRB_M6_2.isSelected()==true){
+            JRB_M6_1.setSelected(false);
+            JRB_M6_3.setSelected(false);
+            
+        }
+    }//GEN-LAST:event_JRB_M6_2ActionPerformed
+
+    private void JRB_M6_3ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_JRB_M6_3ActionPerformed
+        // TODO add your handling code here:
+        if(JRB_M6_3.isSelected()==true){
+            JRB_M6_2.setSelected(false);
+            JRB_M6_1.setSelected(false);
+            
+        }
+    }//GEN-LAST:event_JRB_M6_3ActionPerformed
+
+    private void JRB_M7_1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_JRB_M7_1ActionPerformed
+        // TODO add your handling code here:
+        if(JRB_M7_1.isSelected()==true){
+            JRB_M7_2.setSelected(false);
+            JRB_M7_3.setSelected(false);
+            
+        }
+    }//GEN-LAST:event_JRB_M7_1ActionPerformed
+
+    private void JRB_M7_2ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_JRB_M7_2ActionPerformed
+        // TODO add your handling code here:
+        if(JRB_M7_2.isSelected()==true){
+            JRB_M7_1.setSelected(false);
+            JRB_M7_3.setSelected(false);
+            
+        }
+    }//GEN-LAST:event_JRB_M7_2ActionPerformed
+
+    private void JRB_M7_3ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_JRB_M7_3ActionPerformed
+        // TODO add your handling code here:
+        if(JRB_M7_3.isSelected()==true){
+            JRB_M7_2.setSelected(false);
+            JRB_M7_1.setSelected(false);
+            
+        }
+    }//GEN-LAST:event_JRB_M7_3ActionPerformed
     
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
@@ -415,7 +723,6 @@ public class Gui_Pre_Mat extends javax.swing.JInternalFrame {
     private javax.swing.JRadioButton JRB_M7_3;
     private javax.swing.JTextField JT_Cedula;
     private javax.swing.JLabel JT_Name_Display;
-    private javax.swing.JLabel jLabel1;
     private javax.swing.JLabel jLabel10;
     private javax.swing.JLabel jLabel11;
     private javax.swing.JLabel jLabel12;
