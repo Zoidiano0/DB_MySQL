@@ -539,6 +539,9 @@
       <Properties>
         <Property name="text" type="java.lang.String" value="Guardar"/>
       </Properties>
+      <Events>
+        <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="JB_SaveActionPerformed"/>
+      </Events>
     </Component>
   </SubComponents>
 </Form>

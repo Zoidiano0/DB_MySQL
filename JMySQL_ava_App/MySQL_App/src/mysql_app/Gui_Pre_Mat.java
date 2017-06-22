@@ -10,6 +10,7 @@ import com.mysql.jdbc.Statement;
 
 import java.sql.DriverManager;
 import java.sql.ResultSet;
+import java.util.ArrayList;
 
 /**
  *
@@ -28,6 +29,14 @@ public class Gui_Pre_Mat extends javax.swing.JInternalFrame {
     Statement st;
     ResultSet rs;
     
+    String NM_M1 ="1";
+    String NM_M2 ="1";
+    String NM_M3 ="1";
+    String NM_M4 ="1";
+    String NM_M5 ="1";
+    String NM_M6 ="1";
+    String NM_M7 ="1";
+    ArrayList<String> Mat_Cod = new ArrayList<String>();
     
     /**
      * This method is called from within the constructor to initialize the form.
@@ -289,6 +298,11 @@ public class Gui_Pre_Mat extends javax.swing.JInternalFrame {
         JT_Name_Display.setText("Nombre Estudiante");
 
         JB_Save.setText("Guardar");
+        JB_Save.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                JB_SaveActionPerformed(evt);
+            }
+        });
 
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
         getContentPane().setLayout(layout);
@@ -477,12 +491,14 @@ public class Gui_Pre_Mat extends javax.swing.JInternalFrame {
         try {
             con = (Connection) DriverManager.getConnection("jdbc:mysql://127.0.0.1:3306/ciercom_pre_matricula", "Zoidiano0", "Zoidiano0!");
                        
-
+            int cont =0;
             st = (Statement) con.createStatement();
             String s = "select * from materias";
             rs = st.executeQuery(s);
              while (rs.next()) {        
-               
+                Mat_Cod.add(rs.getString(1));
+                 System.out.println(Mat_Cod.get(cont));
+                 cont++;
                 JCB_M1.addItem(rs.getString(2));
                 JCB_M2.addItem(rs.getString(2));
                 JCB_M3.addItem(rs.getString(2));
@@ -499,195 +515,225 @@ public class Gui_Pre_Mat extends javax.swing.JInternalFrame {
 
     private void JRB_M1_1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_JRB_M1_1ActionPerformed
 
-        if(JRB_M1_1.isSelected()==true){
+        if (JRB_M1_1.isSelected() == true) {
             JRB_M1_2.setSelected(false);
             JRB_M1_3.setSelected(false);
-            
+            NM_M1 = "1";
         }
-              
+
     }//GEN-LAST:event_JRB_M1_1ActionPerformed
 
     private void JRB_M1_2ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_JRB_M1_2ActionPerformed
         // TODO add your handling code here:
-         if(JRB_M1_2.isSelected()==true){
+        if (JRB_M1_2.isSelected() == true) {
             JRB_M1_1.setSelected(false);
             JRB_M1_3.setSelected(false);
-            
+            NM_M1 = "2";
         }
-        
+
     }//GEN-LAST:event_JRB_M1_2ActionPerformed
 
     private void JRB_M1_3ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_JRB_M1_3ActionPerformed
         // TODO add your handling code here:
-        if(JRB_M1_3.isSelected()==true){
+        if (JRB_M1_3.isSelected() == true) {
             JRB_M1_2.setSelected(false);
             JRB_M1_1.setSelected(false);
-            
+            NM_M1 = "3";
+
         }
     }//GEN-LAST:event_JRB_M1_3ActionPerformed
 
     private void JRB_M2_1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_JRB_M2_1ActionPerformed
         // TODO add your handling code here:
-        if(JRB_M2_1.isSelected()==true){
+        if (JRB_M2_1.isSelected() == true) {
             JRB_M2_2.setSelected(false);
             JRB_M2_3.setSelected(false);
-            
+            NM_M2 = "1";
+
         }
-          
+
     }//GEN-LAST:event_JRB_M2_1ActionPerformed
 
     private void JRB_M2_2ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_JRB_M2_2ActionPerformed
         // TODO add your handling code here:
-        if(JRB_M2_2.isSelected()==true){
+        if (JRB_M2_2.isSelected() == true) {
             JRB_M2_1.setSelected(false);
             JRB_M2_3.setSelected(false);
-            
+            NM_M2 = "2";
         }
     }//GEN-LAST:event_JRB_M2_2ActionPerformed
 
     private void JRB_M2_3ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_JRB_M2_3ActionPerformed
         // TODO add your handling code here:
-        if(JRB_M2_3.isSelected()==true){
+        if (JRB_M2_3.isSelected() == true) {
             JRB_M2_2.setSelected(false);
             JRB_M2_1.setSelected(false);
-            
+            NM_M2 = "3";
+
         }
     }//GEN-LAST:event_JRB_M2_3ActionPerformed
 
     private void JRB_M3_1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_JRB_M3_1ActionPerformed
         // TODO add your handling code here:
-        if(JRB_M3_1.isSelected()==true){
+        if (JRB_M3_1.isSelected() == true) {
             JRB_M3_2.setSelected(false);
             JRB_M3_3.setSelected(false);
-            
+            NM_M3 = "1";
+
         }
     }//GEN-LAST:event_JRB_M3_1ActionPerformed
 
     private void JRB_M3_2ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_JRB_M3_2ActionPerformed
         // TODO add your handling code here:
-        if(JRB_M3_2.isSelected()==true){
+        if (JRB_M3_2.isSelected() == true) {
             JRB_M3_1.setSelected(false);
             JRB_M3_3.setSelected(false);
-            
+            NM_M3 = "2";
+
         }
     }//GEN-LAST:event_JRB_M3_2ActionPerformed
 
     private void JRB_M3_3ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_JRB_M3_3ActionPerformed
         // TODO add your handling code here:
-        if(JRB_M3_3.isSelected()==true){
+        if (JRB_M3_3.isSelected() == true) {
             JRB_M3_2.setSelected(false);
             JRB_M3_1.setSelected(false);
-            
+            NM_M3 = "3";
+
         }
     }//GEN-LAST:event_JRB_M3_3ActionPerformed
 
     private void JRB_M4_1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_JRB_M4_1ActionPerformed
         // TODO add your handling code here:
-        if(JRB_M4_1.isSelected()==true){
+        if (JRB_M4_1.isSelected() == true) {
             JRB_M4_2.setSelected(false);
             JRB_M4_3.setSelected(false);
-            
+            NM_M4 = "1";
+
         }
     }//GEN-LAST:event_JRB_M4_1ActionPerformed
 
     private void JRB_M4_2ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_JRB_M4_2ActionPerformed
         // TODO add your handling code here:
-        if(JRB_M4_2.isSelected()==true){
+        if (JRB_M4_2.isSelected() == true) {
             JRB_M4_1.setSelected(false);
             JRB_M4_3.setSelected(false);
-            
+            NM_M4 = "2";
+
         }
     }//GEN-LAST:event_JRB_M4_2ActionPerformed
 
     private void JRB_M4_3ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_JRB_M4_3ActionPerformed
         // TODO add your handling code here:
-        if(JRB_M4_3.isSelected()==true){
+        if (JRB_M4_3.isSelected() == true) {
             JRB_M4_2.setSelected(false);
             JRB_M4_1.setSelected(false);
-            
+            NM_M4 = "3";
+
         }
     }//GEN-LAST:event_JRB_M4_3ActionPerformed
 
     private void JRB_M5_1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_JRB_M5_1ActionPerformed
         // TODO add your handling code here:
-        if(JRB_M5_1.isSelected()==true){
+        if (JRB_M5_1.isSelected() == true) {
             JRB_M5_2.setSelected(false);
             JRB_M5_3.setSelected(false);
-            
+            NM_M5 = "1";
+
         }
     }//GEN-LAST:event_JRB_M5_1ActionPerformed
 
     private void JRB_M5_2ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_JRB_M5_2ActionPerformed
         // TODO add your handling code here:
-        if(JRB_M5_2.isSelected()==true){
+        if (JRB_M5_2.isSelected() == true) {
             JRB_M5_1.setSelected(false);
             JRB_M5_3.setSelected(false);
-            
+            NM_M5 = "2";
+
         }
     }//GEN-LAST:event_JRB_M5_2ActionPerformed
 
     private void JRB_M5_3ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_JRB_M5_3ActionPerformed
         // TODO add your handling code here:
-        if(JRB_M5_3.isSelected()==true){
+        if (JRB_M5_3.isSelected() == true) {
             JRB_M5_2.setSelected(false);
             JRB_M5_1.setSelected(false);
-            
+            NM_M5 = "3";
         }
     }//GEN-LAST:event_JRB_M5_3ActionPerformed
 
     private void JRB_M6_1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_JRB_M6_1ActionPerformed
         // TODO add your handling code here:
-        if(JRB_M6_1.isSelected()==true){
+        if (JRB_M6_1.isSelected() == true) {
             JRB_M6_2.setSelected(false);
             JRB_M6_3.setSelected(false);
-            
+            NM_M6 = "1";
         }
     }//GEN-LAST:event_JRB_M6_1ActionPerformed
 
     private void JRB_M6_2ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_JRB_M6_2ActionPerformed
         // TODO add your handling code here:
-        if(JRB_M6_2.isSelected()==true){
+        if (JRB_M6_2.isSelected() == true) {
             JRB_M6_1.setSelected(false);
             JRB_M6_3.setSelected(false);
-            
+            NM_M6 = "2";
         }
     }//GEN-LAST:event_JRB_M6_2ActionPerformed
 
     private void JRB_M6_3ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_JRB_M6_3ActionPerformed
         // TODO add your handling code here:
-        if(JRB_M6_3.isSelected()==true){
+        if (JRB_M6_3.isSelected() == true) {
             JRB_M6_2.setSelected(false);
             JRB_M6_1.setSelected(false);
-            
+            NM_M6 = "3";
         }
     }//GEN-LAST:event_JRB_M6_3ActionPerformed
 
     private void JRB_M7_1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_JRB_M7_1ActionPerformed
         // TODO add your handling code here:
-        if(JRB_M7_1.isSelected()==true){
+        if (JRB_M7_1.isSelected() == true) {
             JRB_M7_2.setSelected(false);
             JRB_M7_3.setSelected(false);
-            
+            NM_M7 = "1";
         }
     }//GEN-LAST:event_JRB_M7_1ActionPerformed
 
     private void JRB_M7_2ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_JRB_M7_2ActionPerformed
         // TODO add your handling code here:
-        if(JRB_M7_2.isSelected()==true){
+        if (JRB_M7_2.isSelected() == true) {
             JRB_M7_1.setSelected(false);
             JRB_M7_3.setSelected(false);
-            
+            NM_M7 = "2";
         }
     }//GEN-LAST:event_JRB_M7_2ActionPerformed
 
     private void JRB_M7_3ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_JRB_M7_3ActionPerformed
         // TODO add your handling code here:
-        if(JRB_M7_3.isSelected()==true){
+        if (JRB_M7_3.isSelected() == true) {
             JRB_M7_2.setSelected(false);
             JRB_M7_1.setSelected(false);
-            
+            NM_M7 = "3";
         }
     }//GEN-LAST:event_JRB_M7_3ActionPerformed
+
+    private void JB_SaveActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_JB_SaveActionPerformed
+        // TODO add your handling code here:
+        String M_COd = Mat_Cod.get(JCB_M1.getSelectedIndex());
+        System.out.println(M_COd);
+        
+        
+        try {
+            con = (Connection) DriverManager.getConnection("jdbc:mysql://127.0.0.1:3306/ciercom_pre_matricula", "Zoidiano0", "Zoidiano0!");
+                       
+
+            st = (Statement) con.createStatement();
+            String s = "INSERT INTO materias_has_estudiante (Materias_Código , Estudiante_Cedula, N_Matricula) values ( "+M_COd+","+JT_Cedula.getText()+","+NM_M1+");";
+            rs = st.executeQuery(s);
+            
+        } catch (Exception e) {
+            
+        }
+    }//GEN-LAST:event_JB_SaveActionPerformed
     
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
