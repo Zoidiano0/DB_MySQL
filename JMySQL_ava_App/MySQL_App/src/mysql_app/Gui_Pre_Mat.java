@@ -9,6 +9,7 @@ import com.mysql.jdbc.Connection;
 import com.mysql.jdbc.Statement;
 
 import java.sql.DriverManager;
+import java.sql.PreparedStatement;
 import java.sql.ResultSet;
 import java.util.ArrayList;
 
@@ -718,6 +719,9 @@ public class Gui_Pre_Mat extends javax.swing.JInternalFrame {
 
     private void JB_SaveActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_JB_SaveActionPerformed
         // TODO add your handling code here:
+        
+        // Materia 1 
+        
         String M_COd = Mat_Cod.get(JCB_M1.getSelectedIndex());
         System.out.println(M_COd);
         
@@ -727,12 +731,187 @@ public class Gui_Pre_Mat extends javax.swing.JInternalFrame {
                        
 
             st = (Statement) con.createStatement();
-            String s = "INSERT INTO materias_has_estudiante (Materias_Código , Estudiante_Cedula, N_Matricula) values ( "+M_COd+","+JT_Cedula.getText()+","+NM_M1+");";
-            rs = st.executeQuery(s);
+            
+            String s = "INSERT INTO materias_has_estudiante (Materias_Codigo , Estudiante_Cedula, N_Matricula) values (?,?,?);";
+            PreparedStatement pst = con.prepareStatement(s,Statement.RETURN_GENERATED_KEYS);
+           pst.setString(1, M_COd);
+           pst.setString(2, JT_Cedula.getText());
+           pst.setInt(3, Integer.valueOf(NM_M1));
+           int ra = pst.executeUpdate();
+           
+            
             
         } catch (Exception e) {
             
         }
+        
+        // Materia 2 
+        
+        String M_COd2 = Mat_Cod.get(JCB_M2.getSelectedIndex());
+        System.out.println(M_COd);
+        
+        
+        try {
+            con = (Connection) DriverManager.getConnection("jdbc:mysql://127.0.0.1:3306/ciercom_pre_matricula", "Zoidiano0", "Zoidiano0!");
+                       
+
+            st = (Statement) con.createStatement();
+            
+            String s = "INSERT INTO materias_has_estudiante (Materias_Codigo , Estudiante_Cedula, N_Matricula) values (?,?,?);";
+            PreparedStatement pst = con.prepareStatement(s,Statement.RETURN_GENERATED_KEYS);
+           pst.setString(1, M_COd2);
+           pst.setString(2, JT_Cedula.getText());
+           pst.setInt(3, Integer.valueOf(NM_M2));
+           int ra = pst.executeUpdate();
+           
+            
+            
+        } catch (Exception e) {
+            
+        }
+        
+        // Materia 1 
+        
+        String M_COd3 = Mat_Cod.get(JCB_M3.getSelectedIndex());
+        System.out.println(M_COd);
+        
+        
+        try {
+            con = (Connection) DriverManager.getConnection("jdbc:mysql://127.0.0.1:3306/ciercom_pre_matricula", "Zoidiano0", "Zoidiano0!");
+                       
+
+            st = (Statement) con.createStatement();
+            
+            String s = "INSERT INTO materias_has_estudiante (Materias_Codigo , Estudiante_Cedula, N_Matricula) values (?,?,?);";
+            PreparedStatement pst = con.prepareStatement(s,Statement.RETURN_GENERATED_KEYS);
+           pst.setString(1, M_COd3);
+           pst.setString(2, JT_Cedula.getText());
+           pst.setInt(3, Integer.valueOf(NM_M3));
+           int ra = pst.executeUpdate();
+           
+            
+            
+        } catch (Exception e) {
+            
+        }
+        
+        // Materia 1 
+        
+        String M_COd4 = Mat_Cod.get(JCB_M4.getSelectedIndex());
+        System.out.println(M_COd);
+        
+        
+        try {
+            con = (Connection) DriverManager.getConnection("jdbc:mysql://127.0.0.1:3306/ciercom_pre_matricula", "Zoidiano0", "Zoidiano0!");
+                       
+
+            st = (Statement) con.createStatement();
+            
+            String s = "INSERT INTO materias_has_estudiante (Materias_Codigo , Estudiante_Cedula, N_Matricula) values (?,?,?);";
+            PreparedStatement pst = con.prepareStatement(s,Statement.RETURN_GENERATED_KEYS);
+           pst.setString(1, M_COd4);
+           pst.setString(2, JT_Cedula.getText());
+           pst.setInt(3, Integer.valueOf(NM_M4));
+           int ra = pst.executeUpdate();
+           
+            
+            
+        } catch (Exception e) {
+            
+        }
+        
+        // Materia 1 
+        
+        String M_COd5 = Mat_Cod.get(JCB_M5.getSelectedIndex());
+        System.out.println(M_COd);
+        
+        
+        try {
+            con = (Connection) DriverManager.getConnection("jdbc:mysql://127.0.0.1:3306/ciercom_pre_matricula", "Zoidiano0", "Zoidiano0!");
+                       
+
+            st = (Statement) con.createStatement();
+            
+            String s = "INSERT INTO materias_has_estudiante (Materias_Codigo , Estudiante_Cedula, N_Matricula) values (?,?,?);";
+            PreparedStatement pst = con.prepareStatement(s,Statement.RETURN_GENERATED_KEYS);
+           pst.setString(1, M_COd5);
+           pst.setString(2, JT_Cedula.getText());
+           pst.setInt(3, Integer.valueOf(NM_M5));
+           int ra = pst.executeUpdate();
+           
+            
+            
+        } catch (Exception e) {
+            
+        }
+        
+        // Materia 1 
+        
+        String M_COd6 = Mat_Cod.get(JCB_M6.getSelectedIndex());
+        System.out.println(M_COd);
+        
+        
+        try {
+            con = (Connection) DriverManager.getConnection("jdbc:mysql://127.0.0.1:3306/ciercom_pre_matricula", "Zoidiano0", "Zoidiano0!");
+                       
+
+            st = (Statement) con.createStatement();
+            
+            String s = "INSERT INTO materias_has_estudiante (Materias_Codigo , Estudiante_Cedula, N_Matricula) values (?,?,?);";
+            PreparedStatement pst = con.prepareStatement(s,Statement.RETURN_GENERATED_KEYS);
+           pst.setString(1, M_COd6);
+           pst.setString(2, JT_Cedula.getText());
+           pst.setInt(3, Integer.valueOf(NM_M6));
+           int ra = pst.executeUpdate();
+           
+            
+            
+        } catch (Exception e) {
+            
+        }
+        
+        // Materia 1 
+        
+        String M_COd7 = Mat_Cod.get(JCB_M7.getSelectedIndex());
+        System.out.println(M_COd);
+        
+        
+        try {
+            con = (Connection) DriverManager.getConnection("jdbc:mysql://127.0.0.1:3306/ciercom_pre_matricula", "Zoidiano0", "Zoidiano0!");
+                       
+
+            st = (Statement) con.createStatement();
+            
+            String s = "INSERT INTO materias_has_estudiante (Materias_Codigo , Estudiante_Cedula, N_Matricula) values (?,?,?);";
+            PreparedStatement pst = con.prepareStatement(s,Statement.RETURN_GENERATED_KEYS);
+           pst.setString(1, M_COd7);
+           pst.setString(2, JT_Cedula.getText());
+           pst.setInt(3, Integer.valueOf(NM_M7));
+           int ra = pst.executeUpdate();
+           
+            
+            
+        } catch (Exception e) {
+            
+        }
+        
+        // Cambio Esta Matricula
+        
+        try {
+            con = (Connection) DriverManager.getConnection("jdbc:mysql://127.0.0.1:3306/ciercom_pre_matricula", "Zoidiano0", "Zoidiano0!");
+                       
+
+            st = (Statement) con.createStatement();
+            
+            String s = "Alter";
+            
+           
+            
+            
+        } catch (Exception e) {
+            
+        }
+
     }//GEN-LAST:event_JB_SaveActionPerformed
     
 

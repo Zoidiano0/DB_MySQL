@@ -44,6 +44,7 @@ public class Main_GUI extends javax.swing.JFrame {
         aboutMenuItem = new javax.swing.JMenuItem();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
+        setPreferredSize(new java.awt.Dimension(1020, 765));
 
         fileMenu.setMnemonic('f');
         fileMenu.setText("File");
