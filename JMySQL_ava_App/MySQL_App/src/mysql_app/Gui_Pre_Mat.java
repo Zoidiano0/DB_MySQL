@@ -472,7 +472,32 @@ public class Gui_Pre_Mat extends javax.swing.JInternalFrame {
     }// </editor-fold>//GEN-END:initComponents
 
     private void JB_SearchActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_JB_SearchActionPerformed
-        // TODO add your handling code here:
+// Pregunta si ya esta        
+try {
+            con = (Connection) DriverManager.getConnection("jdbc:mysql://127.0.0.1:3306/ciercom_pre_matricula", "Zoidiano0", "Zoidiano0!");
+                       
+
+            st = (Statement) con.createStatement();
+            
+            String s = "Select * from estudainte where Cedula= \'"+JT_Cedula.getText()+"\';";
+            rs = st.executeQuery(s);
+             while (rs.next()) {        
+               
+                
+                System.out.println(rs.getString(6));
+            }
+           
+            
+            
+        } catch (Exception e) {
+            
+        }
+
+
+
+
+
+// TODO add your handling code here:
         try {
             con = (Connection) DriverManager.getConnection("jdbc:mysql://127.0.0.1:3306/ciercom_pre_matricula", "Zoidiano0", "Zoidiano0!");
                        
@@ -903,8 +928,11 @@ public class Gui_Pre_Mat extends javax.swing.JInternalFrame {
 
             st = (Statement) con.createStatement();
             
-            String s = "Alter";
-            
+            String s = "UPDATE estudiante SET Estado_Matricula =? WHERE Cedula=\'"+JT_Cedula.getText()+"\';";
+            PreparedStatement pst = con.prepareStatement(s,Statement.RETURN_GENERATED_KEYS);
+           pst.setBoolean(1, true);
+           
+           int ra = pst.executeUpdate();
            
             
             
