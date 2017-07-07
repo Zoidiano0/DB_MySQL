@@ -12,6 +12,7 @@ import java.sql.DriverManager;
 import java.sql.PreparedStatement;
 import java.sql.ResultSet;
 import java.util.ArrayList;
+import javax.swing.JOptionPane;
 
 /**
  *
@@ -479,18 +480,25 @@ try {
 
             st = (Statement) con.createStatement();
             
-            String s = "Select * from estudainte where Cedula= \'"+JT_Cedula.getText()+"\';";
+            String s = "Select Estado_Matricula from estudiante where Cedula= \'"+JT_Cedula.getText()+"\';";
+            
             rs = st.executeQuery(s);
-             while (rs.next()) {        
+            String Stado="";
+            while (rs.next()) {        
                
+                Stado=rs.getString(1);
+                System.out.println(Stado);
                 
-                System.out.println(rs.getString(6));
             }
            
             
-            
+            if (Stado.equalsIgnoreCase("1")) {
+                 JOptionPane.showMessageDialog(this, "Estidiante Ya Matriculad@!");
+    } else {
+                JOptionPane.showMessageDialog(this, "Estidiante Por  Matricular!");
+    }
         } catch (Exception e) {
-            
+            System.out.println(e);
         }
 
 
