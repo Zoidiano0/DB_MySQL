@@ -120,4 +120,85 @@ FROM envios a
 WHERE cantidad > (SELECT AVG(cantidad)
 FROM envios b
 WHERE b.cno=a.cno );
+*/
+## prolema 21 
 /*
+SELECT cno FROM envios
+WHERE tno = 'T2' AND pno = 'P2';
+*/
+## Problema 22
+/*
+SELECT e.*
+FROM envios e, componentes c
+WHERE e.cno = c.cno AND color <> 'ROJO';
+*/
+##Problema 23
+/*
+SELECT cno
+FROM envios
+WHERE tno ='T1' 
+and exists (
+SELECT cno
+FROM envios
+WHERE tno ='T2');
+*/
+##Problema 24
+/*
+SELECT pno, count(*) A FROM envios
+WHERE cno IN ( SELECT cno
+FROM componentes WHERE color = 'ROJO')
+GROUP BY pno ;
+*/
+##Problema 25
+/*
+SELECT DISTINCT color FROM componentes
+WHERE cno IN ( SELECT DISTINCT cno
+FROM envios WHERE pno = 'P1');
+*/
+##Problema 26
+/*
+SELECT e.*, c.ciudad
+FROM envios e, componentes c,
+articulos a, proveedores p
+WHERE e.tno = a.tno AND e.cno = c.cno AND
+e.pno = p.pno AND p.ciudad=c.ciudad AND
+p.ciudad = a.ciudad;
+*/
+##Problema 27
+/*
+SELECT DISTINCT cnombre
+FROM componentes
+WHERE cno IN ( SELECT cno
+FROM envios
+GROUP BY cno
+HAVING SUM(cantidad)> 500);
+*/
+##Problema 28
+/*
+select distinct pno from proveedores where ciudad='SEVILLA' in (select pno from envios HAVING COUNT(DISTINCT tno) > 2  );
+*/
+##Problema 29
+/*
+SELECT tno
+FROM envios NATURAL JOIN componentes
+GROUP BY tno
+HAVING COUNT(DISTINCT ciudad) = 1 ;
+*/
+##Problema 30
+/*
+SELECT tno FROM Envios GROUP BY tno
+HAVING COUNT(DISTINCT cno) = ( SELECT COUNT(*)
+FROM Componentes) ;
+*/
+##Problema 31
+/*
+SELECT pno, tno
+FROM envios e,componentes c
+WHERE e.cno = c.cno AND c.color='ROJO'
+GROUP BY pno, tno
+HAVING COUNT () > 1;
+*/
+##Problema 32
+/*
+Select distinct pno from envios where cantidad > 500;
+*/
