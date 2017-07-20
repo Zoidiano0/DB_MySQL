@@ -26,8 +26,10 @@ public class Gui_Pre_Mat extends javax.swing.JInternalFrame {
     public Gui_Pre_Mat() {
         initComponents();
         
+    
     }
-    Connection con;
+    Connection_MySQL con2 = new Connection_MySQL();
+    Connection con= con2.get_Connection();
     Statement st;
     ResultSet rs;
     
@@ -475,7 +477,7 @@ public class Gui_Pre_Mat extends javax.swing.JInternalFrame {
     private void JB_SearchActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_JB_SearchActionPerformed
 // Pregunta si ya esta        
 try {
-            con = (Connection) DriverManager.getConnection("jdbc:mysql://127.0.0.1:3306/ciercom_pre_matricula", "Zoidiano0", "Zoidiano0!");
+           
                        
 
             st = (Statement) con.createStatement();
@@ -507,7 +509,7 @@ try {
 
 // TODO add your handling code here:
         try {
-            con = (Connection) DriverManager.getConnection("jdbc:mysql://127.0.0.1:3306/ciercom_pre_matricula", "Zoidiano0", "Zoidiano0!");
+            
                        
 
             st = (Statement) con.createStatement();
@@ -523,7 +525,7 @@ try {
         }
         
         try {
-            con = (Connection) DriverManager.getConnection("jdbc:mysql://127.0.0.1:3306/ciercom_pre_matricula", "Zoidiano0", "Zoidiano0!");
+            
                        
             int cont =0;
             st = (Statement) con.createStatement();
@@ -760,7 +762,7 @@ try {
         
         
         try {
-            con = (Connection) DriverManager.getConnection("jdbc:mysql://127.0.0.1:3306/ciercom_pre_matricula", "Zoidiano0", "Zoidiano0!");
+
                        
 
             st = (Statement) con.createStatement();
@@ -785,7 +787,7 @@ try {
         
         
         try {
-            con = (Connection) DriverManager.getConnection("jdbc:mysql://127.0.0.1:3306/ciercom_pre_matricula", "Zoidiano0", "Zoidiano0!");
+            
                        
 
             st = (Statement) con.createStatement();
@@ -810,7 +812,7 @@ try {
         
         
         try {
-            con = (Connection) DriverManager.getConnection("jdbc:mysql://127.0.0.1:3306/ciercom_pre_matricula", "Zoidiano0", "Zoidiano0!");
+            
                        
 
             st = (Statement) con.createStatement();
@@ -835,7 +837,7 @@ try {
         
         
         try {
-            con = (Connection) DriverManager.getConnection("jdbc:mysql://127.0.0.1:3306/ciercom_pre_matricula", "Zoidiano0", "Zoidiano0!");
+            
                        
 
             st = (Statement) con.createStatement();
@@ -860,7 +862,7 @@ try {
         
         
         try {
-            con = (Connection) DriverManager.getConnection("jdbc:mysql://127.0.0.1:3306/ciercom_pre_matricula", "Zoidiano0", "Zoidiano0!");
+            
                        
 
             st = (Statement) con.createStatement();
@@ -885,7 +887,7 @@ try {
         
         
         try {
-            con = (Connection) DriverManager.getConnection("jdbc:mysql://127.0.0.1:3306/ciercom_pre_matricula", "Zoidiano0", "Zoidiano0!");
+           
                        
 
             st = (Statement) con.createStatement();
@@ -910,7 +912,7 @@ try {
         
         
         try {
-            con = (Connection) DriverManager.getConnection("jdbc:mysql://127.0.0.1:3306/ciercom_pre_matricula", "Zoidiano0", "Zoidiano0!");
+           
                        
 
             st = (Statement) con.createStatement();
@@ -931,7 +933,7 @@ try {
         // Cambio Esta Matricula
         
         try {
-            con = (Connection) DriverManager.getConnection("jdbc:mysql://127.0.0.1:3306/ciercom_pre_matricula", "Zoidiano0", "Zoidiano0!");
+            
                        
 
             st = (Statement) con.createStatement();

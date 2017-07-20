@@ -24,7 +24,8 @@ public class Query_Gui extends javax.swing.JInternalFrame {
      */
     public Query_Gui() {
         initComponents();
-         Connection cn;
+         Connection_MySQL con = new Connection_MySQL();
+         Connection cn= con.get_Connection();
         Statement st;
         Statement st2;
         ResultSet rs;
@@ -38,7 +39,7 @@ public class Query_Gui extends javax.swing.JInternalFrame {
         try {
                   
 
-            cn = (Connection) DriverManager.getConnection("jdbc:mysql://127.0.0.1:3306/ciercom_pre_matricula", "Zoidiano0", "Zoidiano0!");
+            
                        
 
             st = (Statement) cn.createStatement();
@@ -58,7 +59,7 @@ public class Query_Gui extends javax.swing.JInternalFrame {
             
             
             //LLenando ya matriculados
-             cn = (Connection) DriverManager.getConnection("jdbc:mysql://127.0.0.1:3306/ciercom_pre_matricula", "Zoidiano0", "Zoidiano0!");
+            
             st2 = (Statement) cn.createStatement();
             String s2 = "select * from estudiante where Estado_Matricula = 1";
             rs2 = st.executeQuery(s2);

@@ -15,8 +15,8 @@ public class MySQL_App {
      * @param args the command line arguments
      */
     public static void main(String[] args) {
-        Main_GUI GUI = new Main_GUI();
-        GUI.setVisible(true);
+        USER u = new USER();
+        u.setVisible(true);
         
     }
     
