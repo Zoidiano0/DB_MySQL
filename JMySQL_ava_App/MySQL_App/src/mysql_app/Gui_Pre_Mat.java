@@ -49,6 +49,7 @@ public class Gui_Pre_Mat extends javax.swing.JInternalFrame {
     String M6="N/A";
     String M7="N/A";
     ArrayList<String> Mat_Cod = new ArrayList<String>();
+    ArrayList<String> Mat_Code = new ArrayList<String>();
     
     /**
      * This method is called from within the constructor to initialize the form.
@@ -102,6 +103,14 @@ public class Gui_Pre_Mat extends javax.swing.JInternalFrame {
         jLabel12 = new javax.swing.JLabel();
         JT_Name_Display = new javax.swing.JLabel();
         JB_Save = new javax.swing.JToggleButton();
+        JL_T1 = new javax.swing.JLabel();
+        JL_T2 = new javax.swing.JLabel();
+        JL_T3 = new javax.swing.JLabel();
+        JL_T4 = new javax.swing.JLabel();
+        JL_T5 = new javax.swing.JLabel();
+        JL_T6 = new javax.swing.JLabel();
+        JL_T7 = new javax.swing.JLabel();
+        JB_CheckT = new javax.swing.JButton();
 
         setIconifiable(true);
         setMaximizable(true);
@@ -316,98 +325,129 @@ public class Gui_Pre_Mat extends javax.swing.JInternalFrame {
             }
         });
 
+        JL_T1.setText("Profesor");
+
+        JL_T2.setText("Profesor");
+
+        JL_T3.setText("Profesor");
+
+        JL_T4.setText("Profesor");
+
+        JL_T5.setText("Profesor");
+
+        JL_T6.setText("Profesor");
+
+        JL_T7.setText("Profesor");
+
+        JB_CheckT.setText("Mostrar Profesor");
+        JB_CheckT.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                JB_CheckTActionPerformed(evt);
+            }
+        });
+
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
         getContentPane().setLayout(layout);
         layout.setHorizontalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(layout.createSequentialGroup()
+                .addGap(31, 31, 31)
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                     .addGroup(layout.createSequentialGroup()
-                        .addGap(31, 31, 31)
+                        .addGap(6, 6, 6)
+                        .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
+                            .addComponent(jLabel5)
+                            .addComponent(jLabel4)
+                            .addComponent(jLabel6)
+                            .addComponent(jLabel7)
+                            .addComponent(jLabel8)
+                            .addComponent(jLabel9)
+                            .addComponent(jLabel10))
+                        .addGap(38, 38, 38)
                         .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                             .addGroup(layout.createSequentialGroup()
-                                .addGap(200, 200, 200)
-                                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                                    .addComponent(jLabel11)
-                                    .addComponent(JB_Save)))
+                                .addGap(69, 69, 69)
+                                .addComponent(JT_Name_Display, javax.swing.GroupLayout.PREFERRED_SIZE, 457, javax.swing.GroupLayout.PREFERRED_SIZE))
                             .addGroup(layout.createSequentialGroup()
-                                .addGap(6, 6, 6)
-                                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
-                                    .addComponent(jLabel5)
-                                    .addComponent(jLabel4)
-                                    .addComponent(jLabel6)
-                                    .addComponent(jLabel7)
-                                    .addComponent(jLabel8)
-                                    .addComponent(jLabel9)
-                                    .addComponent(jLabel10))
-                                .addGap(38, 38, 38)
+                                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
+                                    .addComponent(JCB_M2, 0, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                                    .addComponent(JCB_M3, 0, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                                    .addComponent(JCB_M4, 0, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                                    .addComponent(JCB_M5, 0, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                                    .addComponent(JCB_M6, 0, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                                    .addComponent(JCB_M7, 0, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                                    .addComponent(JCB_M1, 0, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
+                                .addGap(54, 54, 54)
                                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                                    .addComponent(JT_Name_Display, javax.swing.GroupLayout.PREFERRED_SIZE, 457, javax.swing.GroupLayout.PREFERRED_SIZE)
                                     .addGroup(layout.createSequentialGroup()
-                                        .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
-                                            .addComponent(JCB_M2, 0, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                                            .addComponent(JCB_M3, 0, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                                            .addComponent(JCB_M4, 0, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                                            .addComponent(JCB_M5, 0, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                                            .addComponent(JCB_M6, 0, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                                            .addComponent(JCB_M7, 0, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                                            .addComponent(JCB_M1, 0, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
-                                        .addGap(54, 54, 54)
+                                        .addComponent(JRB_M7_1)
+                                        .addGap(18, 18, 18)
+                                        .addComponent(JRB_M7_2)
+                                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
+                                        .addComponent(JRB_M7_3))
+                                    .addGroup(layout.createSequentialGroup()
+                                        .addComponent(JRB_M6_1)
+                                        .addGap(18, 18, 18)
+                                        .addComponent(JRB_M6_2)
+                                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
+                                        .addComponent(JRB_M6_3))
+                                    .addGroup(layout.createSequentialGroup()
+                                        .addComponent(JRB_M5_1)
+                                        .addGap(18, 18, 18)
+                                        .addComponent(JRB_M5_2)
+                                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
+                                        .addComponent(JRB_M5_3))
+                                    .addGroup(layout.createSequentialGroup()
+                                        .addComponent(JRB_M4_1)
+                                        .addGap(18, 18, 18)
+                                        .addComponent(JRB_M4_2)
+                                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
+                                        .addComponent(JRB_M4_3))
+                                    .addGroup(layout.createSequentialGroup()
+                                        .addComponent(JRB_M3_1)
+                                        .addGap(18, 18, 18)
+                                        .addComponent(JRB_M3_2)
+                                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
+                                        .addComponent(JRB_M3_3))
+                                    .addGroup(layout.createSequentialGroup()
+                                        .addComponent(JRB_M2_1)
+                                        .addGap(18, 18, 18)
+                                        .addComponent(JRB_M2_2)
+                                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
+                                        .addComponent(JRB_M2_3))
+                                    .addGroup(layout.createSequentialGroup()
+                                        .addComponent(JRB_M1_1)
+                                        .addGap(18, 18, 18)
                                         .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                                            .addComponent(jLabel11)
                                             .addGroup(layout.createSequentialGroup()
-                                                .addComponent(JRB_M7_1)
-                                                .addGap(18, 18, 18)
-                                                .addComponent(JRB_M7_2)
-                                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
-                                                .addComponent(JRB_M7_3))
-                                            .addGroup(layout.createSequentialGroup()
-                                                .addComponent(JRB_M6_1)
-                                                .addGap(18, 18, 18)
-                                                .addComponent(JRB_M6_2)
-                                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
-                                                .addComponent(JRB_M6_3))
-                                            .addGroup(layout.createSequentialGroup()
-                                                .addComponent(JRB_M5_1)
-                                                .addGap(18, 18, 18)
-                                                .addComponent(JRB_M5_2)
-                                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
-                                                .addComponent(JRB_M5_3))
-                                            .addGroup(layout.createSequentialGroup()
-                                                .addComponent(JRB_M4_1)
-                                                .addGap(18, 18, 18)
-                                                .addComponent(JRB_M4_2)
-                                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
-                                                .addComponent(JRB_M4_3))
-                                            .addGroup(layout.createSequentialGroup()
-                                                .addComponent(JRB_M3_1)
-                                                .addGap(18, 18, 18)
-                                                .addComponent(JRB_M3_2)
-                                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
-                                                .addComponent(JRB_M3_3))
-                                            .addGroup(layout.createSequentialGroup()
-                                                .addComponent(JRB_M2_1)
-                                                .addGap(18, 18, 18)
-                                                .addComponent(JRB_M2_2)
-                                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
-                                                .addComponent(JRB_M2_3))
-                                            .addGroup(layout.createSequentialGroup()
-                                                .addComponent(JRB_M1_1)
-                                                .addGap(18, 18, 18)
                                                 .addComponent(JRB_M1_2)
                                                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
                                                 .addComponent(JRB_M1_3))))))
-                            .addComponent(jLabel12)))
-                    .addGroup(layout.createSequentialGroup()
-                        .addGap(56, 56, 56)
-                        .addComponent(jLabel2)
-                        .addGap(18, 18, 18)
-                        .addComponent(JT_Cedula, javax.swing.GroupLayout.PREFERRED_SIZE, 110, javax.swing.GroupLayout.PREFERRED_SIZE)
-                        .addGap(18, 18, 18)
-                        .addComponent(JB_Search))
-                    .addGroup(layout.createSequentialGroup()
-                        .addGap(16, 16, 16)
-                        .addComponent(jLabel3)))
-                .addContainerGap(36, Short.MAX_VALUE))
+                            .addComponent(JL_T1)
+                            .addComponent(JL_T2)
+                            .addComponent(JL_T3)
+                            .addComponent(JL_T4)
+                            .addComponent(JL_T5)
+                            .addComponent(JL_T6)
+                            .addComponent(JL_T7)))
+                    .addComponent(jLabel12)))
+            .addGroup(layout.createSequentialGroup()
+                .addGap(56, 56, 56)
+                .addComponent(jLabel2)
+                .addGap(18, 18, 18)
+                .addComponent(JT_Cedula, javax.swing.GroupLayout.PREFERRED_SIZE, 110, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addGap(18, 18, 18)
+                .addComponent(JB_Search))
+            .addGroup(layout.createSequentialGroup()
+                .addGap(16, 16, 16)
+                .addComponent(jLabel3))
+            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, layout.createSequentialGroup()
+                .addContainerGap()
+                .addComponent(JB_CheckT)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
+                .addComponent(JB_Save)
+                .addGap(284, 284, 284))
         );
         layout.setVerticalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
@@ -422,7 +462,7 @@ public class Gui_Pre_Mat extends javax.swing.JInternalFrame {
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
                     .addComponent(jLabel12, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                    .addComponent(JT_Name_Display, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
+                    .addComponent(JT_Name_Display))
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
                 .addComponent(jLabel11)
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
@@ -432,51 +472,67 @@ public class Gui_Pre_Mat extends javax.swing.JInternalFrame {
                     .addComponent(JRB_M1_1)
                     .addComponent(JRB_M1_2)
                     .addComponent(JRB_M1_3))
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                .addComponent(JL_T1)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                     .addComponent(jLabel5)
                     .addComponent(JCB_M2, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                     .addComponent(JRB_M2_1)
                     .addComponent(JRB_M2_2)
                     .addComponent(JRB_M2_3))
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                .addComponent(JL_T2)
+                .addGap(3, 3, 3)
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                     .addComponent(jLabel6)
                     .addComponent(JCB_M3, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                     .addComponent(JRB_M3_1)
                     .addComponent(JRB_M3_2)
                     .addComponent(JRB_M3_3))
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                .addComponent(JL_T3)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                     .addComponent(jLabel7)
                     .addComponent(JCB_M4, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                     .addComponent(JRB_M4_1)
                     .addComponent(JRB_M4_2)
                     .addComponent(JRB_M4_3))
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                .addComponent(JL_T4)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                     .addComponent(jLabel8)
                     .addComponent(JCB_M5, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                     .addComponent(JRB_M5_1)
                     .addComponent(JRB_M5_2)
                     .addComponent(JRB_M5_3))
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                .addComponent(JL_T5)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                     .addComponent(jLabel9)
                     .addComponent(JCB_M6, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                     .addComponent(JRB_M6_1)
                     .addComponent(JRB_M6_2)
                     .addComponent(JRB_M6_3))
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                .addComponent(JL_T6)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                     .addComponent(jLabel10)
                     .addComponent(JCB_M7, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                     .addComponent(JRB_M7_1)
                     .addComponent(JRB_M7_2)
                     .addComponent(JRB_M7_3))
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
-                .addComponent(JB_Save)
-                .addGap(0, 24, Short.MAX_VALUE))
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                .addComponent(JL_T7)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                    .addComponent(JB_Save)
+                    .addComponent(JB_CheckT))
+                .addContainerGap())
         );
 
         pack();
@@ -503,7 +559,8 @@ try {
            
             
             if (Stado.equalsIgnoreCase("1")) {
-                 JOptionPane.showMessageDialog(this, "Estidiante Ya Matriculad@!");
+                 JOptionPane.showMessageDialog(this, "Estidiante Ya Matriculad@! \n Revisar Matricula En su Correspondiente Tabla \n COmuniquese con servicio para realizar Rectificaciones o Anulaciones");
+                 dispose();
     } else {
                 JOptionPane.showMessageDialog(this, "Estidiante Por  Matricular!");
     }
@@ -887,11 +944,13 @@ try {
 
             st = (Statement) con.createStatement();
             
-            String s = "INSERT INTO materias_has_estudiante (Materias_Codigo , Estudiante_Cedula, N_Matricula) values (?,?,?);";
+           String s = "INSERT INTO materias_has_estudiante (Materias_Codigo , Estudiante_Cedula, N_Matricula,Codigo_Matricula,periodo_académico_Código) values (?,?,?,?,?);";
             PreparedStatement pst = con.prepareStatement(s,Statement.RETURN_GENERATED_KEYS);
            pst.setString(1, M_COd2);
            pst.setString(2, JT_Cedula.getText());
            pst.setInt(3, Integer.valueOf(NM_M2));
+           pst.setString(4, Matricula);
+           pst.setString(5, Periodo);
            int ra = pst.executeUpdate();
            
             
@@ -912,11 +971,13 @@ try {
 
             st = (Statement) con.createStatement();
             
-            String s = "INSERT INTO materias_has_estudiante (Materias_Codigo , Estudiante_Cedula, N_Matricula) values (?,?,?);";
+            String s = "INSERT INTO materias_has_estudiante (Materias_Codigo , Estudiante_Cedula, N_Matricula,Codigo_Matricula,periodo_académico_Código) values (?,?,?,?,?);";
             PreparedStatement pst = con.prepareStatement(s,Statement.RETURN_GENERATED_KEYS);
            pst.setString(1, M_COd3);
            pst.setString(2, JT_Cedula.getText());
            pst.setInt(3, Integer.valueOf(NM_M3));
+           pst.setString(4, Matricula);
+           pst.setString(5, Periodo);
            int ra = pst.executeUpdate();
            
             
@@ -937,11 +998,13 @@ try {
 
             st = (Statement) con.createStatement();
             
-            String s = "INSERT INTO materias_has_estudiante (Materias_Codigo , Estudiante_Cedula, N_Matricula) values (?,?,?);";
+            String s = "INSERT INTO materias_has_estudiante (Materias_Codigo , Estudiante_Cedula, N_Matricula,Codigo_Matricula,periodo_académico_Código) values (?,?,?,?,?);";
             PreparedStatement pst = con.prepareStatement(s,Statement.RETURN_GENERATED_KEYS);
            pst.setString(1, M_COd4);
            pst.setString(2, JT_Cedula.getText());
            pst.setInt(3, Integer.valueOf(NM_M4));
+           pst.setString(4, Matricula);
+           pst.setString(5, Periodo);
            int ra = pst.executeUpdate();
            
             
@@ -962,11 +1025,13 @@ try {
 
             st = (Statement) con.createStatement();
             
-            String s = "INSERT INTO materias_has_estudiante (Materias_Codigo , Estudiante_Cedula, N_Matricula) values (?,?,?);";
+            String s = "INSERT INTO materias_has_estudiante (Materias_Codigo , Estudiante_Cedula, N_Matricula,Codigo_Matricula,periodo_académico_Código) values (?,?,?,?,?);";
             PreparedStatement pst = con.prepareStatement(s,Statement.RETURN_GENERATED_KEYS);
            pst.setString(1, M_COd5);
            pst.setString(2, JT_Cedula.getText());
            pst.setInt(3, Integer.valueOf(NM_M5));
+           pst.setString(4, Matricula);
+           pst.setString(5, Periodo);
            int ra = pst.executeUpdate();
            
             
@@ -987,11 +1052,13 @@ try {
 
             st = (Statement) con.createStatement();
             
-            String s = "INSERT INTO materias_has_estudiante (Materias_Codigo , Estudiante_Cedula, N_Matricula) values (?,?,?);";
+            String s = "INSERT INTO materias_has_estudiante (Materias_Codigo , Estudiante_Cedula, N_Matricula,Codigo_Matricula,periodo_académico_Código) values (?,?,?,?,?);";
             PreparedStatement pst = con.prepareStatement(s,Statement.RETURN_GENERATED_KEYS);
            pst.setString(1, M_COd6);
            pst.setString(2, JT_Cedula.getText());
            pst.setInt(3, Integer.valueOf(NM_M6));
+           pst.setString(4, Matricula);
+           pst.setString(5, Periodo);
            int ra = pst.executeUpdate();
            
             
@@ -1012,11 +1079,13 @@ try {
 
             st = (Statement) con.createStatement();
             
-            String s = "INSERT INTO materias_has_estudiante (Materias_Codigo , Estudiante_Cedula, N_Matricula) values (?,?,?);";
+            String s = "INSERT INTO materias_has_estudiante (Materias_Codigo , Estudiante_Cedula, N_Matricula,Codigo_Matricula,periodo_académico_Código) values (?,?,?,?,?);";
             PreparedStatement pst = con.prepareStatement(s,Statement.RETURN_GENERATED_KEYS);
            pst.setString(1, M_COd7);
            pst.setString(2, JT_Cedula.getText());
            pst.setInt(3, Integer.valueOf(NM_M7));
+           pst.setString(4, Matricula);
+           pst.setString(5, Periodo);
            int ra = pst.executeUpdate();
            
             
@@ -1051,7 +1120,7 @@ try {
                         + "Nombre: "+Nombre+"\n"
                                  + "Matricula #"+ Matricula+"\n"+
                                   "Periodo: "+Periodo
-                                + "Materias:\n \n"
+                                + "\n Materias:\n \n"
                                 + JCB_M1.getItemAt(JCB_M1.getSelectedIndex()) + "\n"
                                         + JCB_M2.getItemAt(JCB_M2.getSelectedIndex()) + "\n"
                                         + JCB_M3.getItemAt(JCB_M3.getSelectedIndex()) + "\n"
@@ -1061,9 +1130,117 @@ try {
                                         + JCB_M7.getItemAt(JCB_M7.getSelectedIndex())+ "\n \n Cualquier Inconveniente Con La matrícula \nFavor Comunicarse En Secretaria Para Solicitar Cambio");
         
     }//GEN-LAST:event_JB_SaveActionPerformed
+
+    private void JB_CheckTActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_JB_CheckTActionPerformed
+        // TODO add your handling code here:
+        
+        //Materia 1 
+        try {
+            
+            st = (com.mysql.jdbc.Statement) con.createStatement();
+            String s = "SELECT Nombres FROM docente inner join docente_has_materias on docente.Ci = docente_has_materias.Docente_Ci where Materias_Código = \'" + Mat_Cod.get(JCB_M1.getSelectedIndex()) + "\' ;";
+            System.out.println(s);
+            rs = st.executeQuery(s);
+            while(rs.next()){
+                System.out.println(rs.getString(1));   
+            JL_T1.setText(rs.getString(1));
+            }
+        } catch (Exception e) {
+        }
+        
+        
+        //Materia 2 
+        try {
+            
+            st = (com.mysql.jdbc.Statement) con.createStatement();
+            String s = "SELECT Nombres FROM docente inner join docente_has_materias on docente.Ci = docente_has_materias.Docente_Ci where Materias_Código = \'" + Mat_Cod.get(JCB_M2.getSelectedIndex()) + "\' ;";
+            System.out.println(s);
+            rs = st.executeQuery(s);
+            while(rs.next()){
+                System.out.println(rs.getString(1));   
+            JL_T2.setText(rs.getString(1));
+            }
+        } catch (Exception e) {
+        }
+        
+        
+        //Materia 3 
+        try {
+            
+            st = (com.mysql.jdbc.Statement) con.createStatement();
+            String s = "SELECT Nombres FROM docente inner join docente_has_materias on docente.Ci = docente_has_materias.Docente_Ci where Materias_Código = \'" + Mat_Cod.get(JCB_M3.getSelectedIndex()) + "\' ;";
+            System.out.println(s);
+            rs = st.executeQuery(s);
+            while(rs.next()){
+                System.out.println(rs.getString(1));   
+            JL_T3.setText(rs.getString(1));
+            }
+        } catch (Exception e) {
+        }
+        
+        
+        //Materia 4
+        try {
+            
+            st = (com.mysql.jdbc.Statement) con.createStatement();
+            String s = "SELECT Nombres FROM docente inner join docente_has_materias on docente.Ci = docente_has_materias.Docente_Ci where Materias_Código = \'" + Mat_Cod.get(JCB_M4.getSelectedIndex()) + "\' ;";
+            System.out.println(s);
+            rs = st.executeQuery(s);
+            while(rs.next()){
+                System.out.println(rs.getString(1));   
+            JL_T4.setText(rs.getString(1));
+            }
+        } catch (Exception e) {
+        }
+        
+        
+        //Materia 5 
+        try {
+            
+            st = (com.mysql.jdbc.Statement) con.createStatement();
+            String s = "SELECT Nombres FROM docente inner join docente_has_materias on docente.Ci = docente_has_materias.Docente_Ci where Materias_Código = \'" + Mat_Cod.get(JCB_M5.getSelectedIndex()) + "\' ;";
+            System.out.println(s);
+            rs = st.executeQuery(s);
+            while(rs.next()){
+                System.out.println(rs.getString(1));   
+            JL_T5.setText(rs.getString(1));
+            }
+        } catch (Exception e) {
+        }
+        
+        //Materia 6 
+        try {
+            
+            st = (com.mysql.jdbc.Statement) con.createStatement();
+            String s = "SELECT Nombres FROM docente inner join docente_has_materias on docente.Ci = docente_has_materias.Docente_Ci where Materias_Código = \'" + Mat_Cod.get(JCB_M6.getSelectedIndex()) + "\' ;";
+            System.out.println(s);
+            rs = st.executeQuery(s);
+            while(rs.next()){
+                System.out.println(rs.getString(1));   
+            JL_T6.setText(rs.getString(1));
+            }
+        } catch (Exception e) {
+        }
+        
+        //Materia 7
+        try {
+            
+            st = (com.mysql.jdbc.Statement) con.createStatement();
+            String s = "SELECT Nombres FROM docente inner join docente_has_materias on docente.Ci = docente_has_materias.Docente_Ci where Materias_Código = \'" + Mat_Cod.get(JCB_M7.getSelectedIndex()) + "\' ;";
+            System.out.println(s);
+            rs = st.executeQuery(s);
+            while(rs.next()){
+                System.out.println(rs.getString(1));   
+            JL_T7.setText(rs.getString(1));
+            }
+        } catch (Exception e) {
+        }
+        
+    }//GEN-LAST:event_JB_CheckTActionPerformed
     
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
+    private javax.swing.JButton JB_CheckT;
     private javax.swing.JToggleButton JB_Save;
     private javax.swing.JButton JB_Search;
     private javax.swing.JComboBox<String> JCB_M1;
@@ -1073,6 +1250,13 @@ try {
     private javax.swing.JComboBox<String> JCB_M5;
     private javax.swing.JComboBox<String> JCB_M6;
     private javax.swing.JComboBox<String> JCB_M7;
+    private javax.swing.JLabel JL_T1;
+    private javax.swing.JLabel JL_T2;
+    private javax.swing.JLabel JL_T3;
+    private javax.swing.JLabel JL_T4;
+    private javax.swing.JLabel JL_T5;
+    private javax.swing.JLabel JL_T6;
+    private javax.swing.JLabel JL_T7;
     private javax.swing.JRadioButton JRB_M1_1;
     private javax.swing.JRadioButton JRB_M1_2;
     private javax.swing.JRadioButton JRB_M1_3;
