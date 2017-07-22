@@ -7,6 +7,7 @@ package mysql_app;
 
 import com.mysql.jdbc.Connection;
 import com.mysql.jdbc.Statement;
+import java.awt.Container;
 
 import java.sql.DriverManager;
 import java.sql.PreparedStatement;
@@ -32,7 +33,7 @@ public class Gui_Pre_Mat extends javax.swing.JInternalFrame {
     Connection con= con2.get_Connection();
     Statement st;
     ResultSet rs;
-    
+    String Nombre="";
     String NM_M1 ="1";
     String NM_M2 ="1";
     String NM_M3 ="1";
@@ -40,6 +41,13 @@ public class Gui_Pre_Mat extends javax.swing.JInternalFrame {
     String NM_M5 ="1";
     String NM_M6 ="1";
     String NM_M7 ="1";
+    String M1="N/A";
+    String M2="N/A";
+    String M3="N/A";
+    String M4="N/A";
+    String M5="N/A";
+    String M6="N/A";
+    String M7="N/A";
     ArrayList<String> Mat_Cod = new ArrayList<String>();
     
     /**
@@ -504,7 +512,7 @@ try {
         }
 
 
-
+    
 
 
 // TODO add your handling code here:
@@ -518,7 +526,7 @@ try {
              while (rs.next()) {        
                
                 JT_Name_Display.setText(rs.getString(2)+" "+rs.getString(3));
-                
+                Nombre= rs.getString(2)+" "+rs.getString(2);
             }
         } catch (Exception e) {
             
@@ -547,6 +555,13 @@ try {
             }
         } catch (Exception e) {
         }
+        
+       
+        
+        
+        
+        
+        
     }//GEN-LAST:event_JB_SearchActionPerformed
 
     private void JRB_M1_1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_JRB_M1_1ActionPerformed
@@ -754,6 +769,84 @@ try {
 
     private void JB_SaveActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_JB_SaveActionPerformed
         // TODO add your handling code here:
+      String Periodo="";  
+      String Matricula="";
+        try {
+            
+            
+            //Obtener el Periodo Academico Activo
+            
+            
+            
+             st = (Statement) con.createStatement();
+            
+            String s = "Select Codigo from periodo_académico where Estado= '1';";
+            
+            rs = st.executeQuery(s);
+            
+            while (rs.next()) {        
+               
+                Periodo=rs.getString(1);
+                System.out.println(Periodo);
+                
+            }
+            
+            
+            
+            
+            
+            
+            
+            
+            
+            
+            
+            
+            
+            
+            //Ingreso datos
+                    st = (Statement) con.createStatement();
+            
+            String m = "INSERT INTO matricula (Estudiante , Periodo_Academico) values (?,?);";
+            PreparedStatement pst = con.prepareStatement(m,Statement.RETURN_GENERATED_KEYS);
+           pst.setString(1, JT_Cedula.getText());
+           pst.setString(2,Periodo);
+          
+           int ra = pst.executeUpdate();
+           
+           
+           // Leer Matricula Creada 
+           
+           st = (Statement) con.createStatement();
+            
+            String y = "Select idMatricula from matricula where Estudiante= \'"+JT_Cedula.getText()+"\';";
+            
+            rs = st.executeQuery(y);
+            
+            while (rs.next()) {        
+               
+                Matricula=rs.getString(1);
+                System.out.println(Matricula);
+                
+            }
+           
+           
+           
+                 
+           
+           
+           
+           
+           
+           
+           
+           
+
+        } catch (Exception e) {
+        }
+        
+        
+        
         
         // Materia 1 
         
@@ -767,11 +860,13 @@ try {
 
             st = (Statement) con.createStatement();
             
-            String s = "INSERT INTO materias_has_estudiante (Materias_Codigo , Estudiante_Cedula, N_Matricula) values (?,?,?);";
+            String s = "INSERT INTO materias_has_estudiante (Materias_Codigo , Estudiante_Cedula, N_Matricula,Codigo_Matricula,periodo_académico_Código) values (?,?,?,?,?);";
             PreparedStatement pst = con.prepareStatement(s,Statement.RETURN_GENERATED_KEYS);
            pst.setString(1, M_COd);
            pst.setString(2, JT_Cedula.getText());
            pst.setInt(3, Integer.valueOf(NM_M1));
+           pst.setString(4, Matricula);
+           pst.setString(5, Periodo);
            int ra = pst.executeUpdate();
            
             
@@ -949,7 +1044,22 @@ try {
         } catch (Exception e) {
             
         }
-
+        
+        dispose();
+        JOptionPane.showMessageDialog(this, "Estidiante Matriculad@! \n "
+                + "Estudiante: "+ JT_Cedula.getText()+"\n"
+                        + "Nombre: "+Nombre+"\n"
+                                 + "Matricula #"+ Matricula+"\n"+
+                                  "Periodo: "+Periodo
+                                + "Materias:\n \n"
+                                + JCB_M1.getItemAt(JCB_M1.getSelectedIndex()) + "\n"
+                                        + JCB_M2.getItemAt(JCB_M2.getSelectedIndex()) + "\n"
+                                        + JCB_M3.getItemAt(JCB_M3.getSelectedIndex()) + "\n"
+                                        + JCB_M4.getItemAt(JCB_M4.getSelectedIndex()) + "\n"
+                                        + JCB_M5.getItemAt(JCB_M5.getSelectedIndex()) + "\n"
+                                        + JCB_M6.getItemAt(JCB_M6.getSelectedIndex()) + "\n"
+                                        + JCB_M7.getItemAt(JCB_M7.getSelectedIndex())+ "\n \n Cualquier Inconveniente Con La matrícula \nFavor Comunicarse En Secretaria Para Solicitar Cambio");
+        
     }//GEN-LAST:event_JB_SaveActionPerformed
     
 

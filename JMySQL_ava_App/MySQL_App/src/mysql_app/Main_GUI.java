@@ -70,7 +70,7 @@ public class Main_GUI extends javax.swing.JFrame {
         fileMenu.add(saveMenuItem);
 
         saveAsMenuItem.setMnemonic('a');
-        saveAsMenuItem.setText("Ingreso Alum.");
+        saveAsMenuItem.setText("Revision Matricula");
         saveAsMenuItem.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 saveAsMenuItemActionPerformed(evt);
@@ -79,7 +79,7 @@ public class Main_GUI extends javax.swing.JFrame {
         fileMenu.add(saveAsMenuItem);
 
         exitMenuItem.setMnemonic('x');
-        exitMenuItem.setText("Editar MAtricula");
+        exitMenuItem.setText("Salir");
         exitMenuItem.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 exitMenuItemActionPerformed(evt);
@@ -159,6 +159,9 @@ public class Main_GUI extends javax.swing.JFrame {
 
     private void saveAsMenuItemActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_saveAsMenuItemActionPerformed
         // TODO add your handling code here:
+        Resumen rs = new Resumen();
+        desktopPane.add(rs);
+        rs.show();
       
     }//GEN-LAST:event_saveAsMenuItemActionPerformed
 

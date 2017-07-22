@@ -18,7 +18,8 @@ import javax.swing.JOptionPane;
  * @author RociodelosAngeles
  */
 public class Query_Gui extends javax.swing.JInternalFrame {
-
+  Connection_MySQL cm = new Connection_MySQL();
+       Connection cn= cm.get_Connection();
     /**
      * Creates new form Query_Gui
      */
@@ -217,7 +218,7 @@ public class Query_Gui extends javax.swing.JInternalFrame {
     private void JButton_RefreshActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_JButton_RefreshActionPerformed
         // TODO add your handling code here:
         
-       Connection cn;
+      
         Statement st;
         Statement st2;
         ResultSet rs;
@@ -231,7 +232,7 @@ public class Query_Gui extends javax.swing.JInternalFrame {
         try {
                   
 
-            cn = (Connection) DriverManager.getConnection("jdbc:mysql://127.0.0.1:3306/ciercom_pre_matricula", "Zoidiano0", "Zoidiano0!");
+           
                        
 
             st = (Statement) cn.createStatement();
@@ -251,7 +252,7 @@ public class Query_Gui extends javax.swing.JInternalFrame {
             
             
             //LLenando ya matriculados
-             cn = (Connection) DriverManager.getConnection("jdbc:mysql://127.0.0.1:3306/ciercom_pre_matricula", "Zoidiano0", "Zoidiano0!");
+            
             st2 = (Statement) cn.createStatement();
             String s2 = "select * from estudiante where Estado_Matricula = 1";
             rs2 = st.executeQuery(s2);
