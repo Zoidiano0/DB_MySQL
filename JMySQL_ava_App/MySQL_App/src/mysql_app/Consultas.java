@@ -7,9 +7,11 @@ package mysql_app;
 
 import com.mysql.jdbc.Connection;
 import com.mysql.jdbc.Statement;
+import java.sql.PreparedStatement;
 import java.sql.ResultSet;
 import java.util.ArrayList;
 import javax.swing.DefaultListModel;
+import javax.swing.JOptionPane;
 
 /**
  *
@@ -64,6 +66,9 @@ Connection_MySQL cm = new Connection_MySQL();
         jScrollPane1 = new javax.swing.JScrollPane();
         JL_ES = new javax.swing.JList<>();
         JCB_MAt = new javax.swing.JComboBox<>();
+        jLabel2 = new javax.swing.JLabel();
+        jLabel3 = new javax.swing.JLabel();
+        JT_Cedula = new javax.swing.JTextField();
 
         setClosable(true);
         setIconifiable(true);
@@ -86,6 +91,17 @@ Connection_MySQL cm = new Connection_MySQL();
             }
         });
 
+        jLabel2.setText("Anilacion De Matriculas ( Completa ) ");
+
+        jLabel3.setText("Ingrese Cedula para Anular");
+
+        JT_Cedula.setText("Cedula");
+        JT_Cedula.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                JT_CedulaActionPerformed(evt);
+            }
+        });
+
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
         getContentPane().setLayout(layout);
         layout.setHorizontalGroup(
@@ -98,8 +114,17 @@ Connection_MySQL cm = new Connection_MySQL();
                         .addComponent(jLabel1)
                         .addGap(37, 37, 37)
                         .addComponent(JCB_MAt, javax.swing.GroupLayout.PREFERRED_SIZE, 229, javax.swing.GroupLayout.PREFERRED_SIZE)
-                        .addGap(0, 81, Short.MAX_VALUE)))
+                        .addGap(0, 97, Short.MAX_VALUE)))
                 .addContainerGap())
+            .addGroup(layout.createSequentialGroup()
+                .addGap(20, 20, 20)
+                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addGroup(layout.createSequentialGroup()
+                        .addComponent(jLabel3)
+                        .addGap(84, 84, 84)
+                        .addComponent(JT_Cedula, javax.swing.GroupLayout.PREFERRED_SIZE, 254, javax.swing.GroupLayout.PREFERRED_SIZE))
+                    .addComponent(jLabel2))
+                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
         );
         layout.setVerticalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
@@ -109,8 +134,14 @@ Connection_MySQL cm = new Connection_MySQL();
                     .addComponent(jLabel1)
                     .addComponent(JCB_MAt, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
                 .addGap(18, 18, 18)
-                .addComponent(jScrollPane1, javax.swing.GroupLayout.DEFAULT_SIZE, 302, Short.MAX_VALUE)
-                .addContainerGap())
+                .addComponent(jScrollPane1, javax.swing.GroupLayout.PREFERRED_SIZE, 176, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
+                .addComponent(jLabel2)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
+                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                    .addComponent(jLabel3)
+                    .addComponent(JT_Cedula, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                .addContainerGap(26, Short.MAX_VALUE))
         );
 
         pack();
@@ -142,13 +173,89 @@ Connection_MySQL cm = new Connection_MySQL();
         
         
     }//GEN-LAST:event_JCB_MAtActionPerformed
+String MAT_Cod = "";
+    private void JT_CedulaActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_JT_CedulaActionPerformed
+        // TODO add your handling code here:
+        Statement st;
+            ResultSet rs;
+        // obtener el codigo de matricula 
+            
+            try {
+            st = (Statement) cn.createStatement();
+            String s3 = "SELECT idMatricula FROM ciercom_pre_matricula.matricula where Estudiante = \'"+ JT_Cedula.getText() + "\';";
+            rs = st.executeQuery(s3);
+            
+            while (rs.next()) {        
+               
+                MAT_Cod = rs.getString(1);
+            }
+                System.out.println("Codigo Matricula "+MAT_Cod);
+        } catch (Exception e) {
+        }
+              
+           //Borrar Materias      
+            try {
+            model.clear();
+            
+            st = (Statement) cn.createStatement();
+            String s = "DELETE FROM materias_has_estudiante WHERE Estudiante_Cedula =\'"+ JT_Cedula.getText()+"\';";
+            st.executeUpdate(s);
+                       
+                JL_ES.setModel(model);
+                
+            
+        } catch (Exception e) {
+        System.out.println(e);
+                System.out.println("NO ejecuto");
+            }
+            // Borrar Matricula
+        
+        try {
+            model.clear();
+            
+            st = (Statement) cn.createStatement();
+            String s = "DELETE FROM matricula WHERE idMatricula=\'"+MAT_Cod+"\';";
+            st.executeUpdate(s);
+                            
+               
+                
+            
+        } catch (Exception e) {
+        System.out.println(e);
+        System.out.println("NO ejecuto");
+            }
+        
+        try {
+            
+                       
+
+            st = (Statement) cn.createStatement();
+            
+            String s = "UPDATE estudiante SET Estado_Matricula =? WHERE Cedula=\'"+JT_Cedula.getText()+"\';";
+            PreparedStatement pst = cn.prepareStatement(s,Statement.RETURN_GENERATED_KEYS);
+           pst.setBoolean(1, false);
+           
+           int ra = pst.executeUpdate();
+           
+            
+            
+        } catch (Exception e) {
+            System.out.println(e);
+        }
+        JOptionPane.showMessageDialog(this, "Matricula Eliminada!");
+        
+        
+    }//GEN-LAST:event_JT_CedulaActionPerformed
 
     
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
     private javax.swing.JComboBox<String> JCB_MAt;
     private javax.swing.JList<String> JL_ES;
+    private javax.swing.JTextField JT_Cedula;
     private javax.swing.JLabel jLabel1;
+    private javax.swing.JLabel jLabel2;
+    private javax.swing.JLabel jLabel3;
     private javax.swing.JScrollPane jScrollPane1;
     // End of variables declaration//GEN-END:variables
 }
