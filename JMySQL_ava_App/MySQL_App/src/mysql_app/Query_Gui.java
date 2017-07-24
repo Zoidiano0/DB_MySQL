@@ -23,6 +23,9 @@ public class Query_Gui extends javax.swing.JInternalFrame {
     /**
      * Creates new form Query_Gui
      */
+       
+        DefaultListModel model = new DefaultListModel();
+          DefaultListModel model2 = new DefaultListModel();
     public Query_Gui() {
         initComponents();
          Connection_MySQL con = new Connection_MySQL();
@@ -31,8 +34,7 @@ public class Query_Gui extends javax.swing.JInternalFrame {
         Statement st2;
         ResultSet rs;
         ResultSet rs2;
-         DefaultListModel model = new DefaultListModel();
-          DefaultListModel model2 = new DefaultListModel();
+        
           model.clear();
           model2.clear();
           int cnt=0;
@@ -49,7 +51,7 @@ public class Query_Gui extends javax.swing.JInternalFrame {
            cnt=0;
             while (rs.next()) {        
                
-                model.addElement(rs.getString(1)+" "+rs.getString(2));
+                model.addElement(rs.getString(1));
                 cnt++;
                 
                 
@@ -67,7 +69,7 @@ public class Query_Gui extends javax.swing.JInternalFrame {
             cnt2=0;
             while (rs2.next()) {        
                
-                model2.addElement(rs2.getString(1)+" "+rs2.getString(2));
+                model2.addElement(rs2.getString(1));
                 cnt2++;
                
                 
@@ -100,11 +102,13 @@ public class Query_Gui extends javax.swing.JInternalFrame {
         SCroll_No_Mat = new javax.swing.JScrollPane();
         Jlist_NM = new javax.swing.JList<>();
         JLabel_ContNo = new javax.swing.JLabel();
+        JT_BNM = new javax.swing.JTextField();
         jPanel2 = new javax.swing.JPanel();
         jLabel2 = new javax.swing.JLabel();
         jScrollPane1 = new javax.swing.JScrollPane();
         Jlist_Mat = new javax.swing.JList<>();
         JLabel_Cont_M = new javax.swing.JLabel();
+        jTextField2 = new javax.swing.JTextField();
         JButton_Refresh = new javax.swing.JButton();
 
         setClosable(true);
@@ -118,6 +122,13 @@ public class Query_Gui extends javax.swing.JInternalFrame {
 
         SCroll_No_Mat.setViewportView(Jlist_NM);
 
+        JT_BNM.setText("Buscar ");
+        JT_BNM.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                JT_BNMActionPerformed(evt);
+            }
+        });
+
         javax.swing.GroupLayout jPanel1Layout = new javax.swing.GroupLayout(jPanel1);
         jPanel1.setLayout(jPanel1Layout);
         jPanel1Layout.setHorizontalGroup(
@@ -125,20 +136,26 @@ public class Query_Gui extends javax.swing.JInternalFrame {
             .addGroup(jPanel1Layout.createSequentialGroup()
                 .addContainerGap()
                 .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addComponent(SCroll_No_Mat, javax.swing.GroupLayout.PREFERRED_SIZE, 281, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addGroup(jPanel1Layout.createSequentialGroup()
+                        .addComponent(SCroll_No_Mat, javax.swing.GroupLayout.PREFERRED_SIZE, 281, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addGap(0, 0, Short.MAX_VALUE))
                     .addGroup(jPanel1Layout.createSequentialGroup()
                         .addComponent(jLabel1)
                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
-                        .addComponent(JLabel_ContNo, javax.swing.GroupLayout.PREFERRED_SIZE, 21, javax.swing.GroupLayout.PREFERRED_SIZE)))
+                        .addComponent(JLabel_ContNo, javax.swing.GroupLayout.PREFERRED_SIZE, 21, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                        .addComponent(JT_BNM, javax.swing.GroupLayout.PREFERRED_SIZE, 140, javax.swing.GroupLayout.PREFERRED_SIZE)))
                 .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
         );
         jPanel1Layout.setVerticalGroup(
             jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(jPanel1Layout.createSequentialGroup()
                 .addContainerGap()
-                .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
-                    .addComponent(jLabel1, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                    .addComponent(JLabel_ContNo, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
+                .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
+                    .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
+                        .addComponent(jLabel1, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                        .addComponent(JLabel_ContNo, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
+                    .addComponent(JT_BNM, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                 .addComponent(SCroll_No_Mat)
                 .addContainerGap())
@@ -149,6 +166,13 @@ public class Query_Gui extends javax.swing.JInternalFrame {
         jLabel2.setText("Matriculado");
 
         jScrollPane1.setViewportView(Jlist_Mat);
+
+        jTextField2.setText("Buscar");
+        jTextField2.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                jTextField2ActionPerformed(evt);
+            }
+        });
 
         javax.swing.GroupLayout jPanel2Layout = new javax.swing.GroupLayout(jPanel2);
         jPanel2.setLayout(jPanel2Layout);
@@ -162,16 +186,19 @@ public class Query_Gui extends javax.swing.JInternalFrame {
                         .addComponent(jLabel2)
                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
                         .addComponent(JLabel_Cont_M, javax.swing.GroupLayout.PREFERRED_SIZE, 37, javax.swing.GroupLayout.PREFERRED_SIZE)
-                        .addGap(0, 0, Short.MAX_VALUE)))
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                        .addComponent(jTextField2)))
                 .addContainerGap())
         );
         jPanel2Layout.setVerticalGroup(
             jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(jPanel2Layout.createSequentialGroup()
                 .addContainerGap()
-                .addGroup(jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
-                    .addComponent(jLabel2, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                    .addComponent(JLabel_Cont_M, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
+                .addGroup(jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
+                    .addGroup(jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
+                        .addComponent(jLabel2, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                        .addComponent(JLabel_Cont_M, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
+                    .addComponent(jTextField2, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                 .addComponent(jScrollPane1, javax.swing.GroupLayout.DEFAULT_SIZE, 301, Short.MAX_VALUE)
                 .addContainerGap())
@@ -209,7 +236,7 @@ public class Query_Gui extends javax.swing.JInternalFrame {
                     .addComponent(jPanel1, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                 .addComponent(JButton_Refresh)
-                .addContainerGap(10, Short.MAX_VALUE))
+                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
         );
 
         pack();
@@ -223,8 +250,7 @@ public class Query_Gui extends javax.swing.JInternalFrame {
         Statement st2;
         ResultSet rs;
         ResultSet rs2;
-         DefaultListModel model = new DefaultListModel();
-          DefaultListModel model2 = new DefaultListModel();
+        
           model.clear();
           model2.clear();
           int cnt=0;
@@ -241,7 +267,7 @@ public class Query_Gui extends javax.swing.JInternalFrame {
            cnt=0;
             while (rs.next()) {        
                
-                model.addElement(rs.getString(1)+" "+rs.getString(2));
+                model.addElement(rs.getString(1));
                 cnt++;
                 
                 
@@ -259,7 +285,7 @@ public class Query_Gui extends javax.swing.JInternalFrame {
             cnt2=0;
             while (rs2.next()) {        
                
-                model2.addElement(rs2.getString(1)+" "+rs2.getString(2));
+                model2.addElement(rs2.getString(1));
                 cnt2++;
                
                 
@@ -277,11 +303,38 @@ public class Query_Gui extends javax.swing.JInternalFrame {
         
     }//GEN-LAST:event_JButton_RefreshActionPerformed
 
+    private void JT_BNMActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_JT_BNMActionPerformed
+        // TODO add your handling code here:
+        
+        if(model.contains(JT_BNM.getText())){
+            JOptionPane.showMessageDialog(this, "Estudiante Encontrado");
+        }
+        else{
+            JOptionPane.showMessageDialog(this, "Estudiante No Encontrado");
+        }
+        
+        
+        
+        
+    }//GEN-LAST:event_JT_BNMActionPerformed
+
+    private void jTextField2ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jTextField2ActionPerformed
+        // TODO add your handling code here:
+        
+        if(model2.contains(JT_BNM.getText())){
+            JOptionPane.showMessageDialog(this, "Estudiante Encontrado");
+        }
+        else{
+            JOptionPane.showMessageDialog(this, "Estudiante No Encontrado");
+        }
+    }//GEN-LAST:event_jTextField2ActionPerformed
+
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
     private javax.swing.JButton JButton_Refresh;
     private javax.swing.JLabel JLabel_ContNo;
     private javax.swing.JLabel JLabel_Cont_M;
+    private javax.swing.JTextField JT_BNM;
     private javax.swing.JList<String> Jlist_Mat;
     private javax.swing.JList<String> Jlist_NM;
     private javax.swing.JScrollPane SCroll_No_Mat;
@@ -290,5 +343,6 @@ public class Query_Gui extends javax.swing.JInternalFrame {
     private javax.swing.JPanel jPanel1;
     private javax.swing.JPanel jPanel2;
     private javax.swing.JScrollPane jScrollPane1;
+    private javax.swing.JTextField jTextField2;
     // End of variables declaration//GEN-END:variables
 }
