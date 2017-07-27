@@ -46,7 +46,7 @@ public class Gui_Admin extends javax.swing.JFrame {
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
 
         fileMenu.setMnemonic('f');
-        fileMenu.setText("File");
+        fileMenu.setText("Acciones");
 
         openMenuItem.setMnemonic('o');
         openMenuItem.setText("Consultas");
@@ -87,18 +87,33 @@ public class Gui_Admin extends javax.swing.JFrame {
         menuBar.add(fileMenu);
 
         editMenu.setMnemonic('e');
-        editMenu.setText("Edit");
+        editMenu.setText("Reportes");
 
         cutMenuItem.setMnemonic('t');
-        cutMenuItem.setText("Cut");
+        cutMenuItem.setText("Reporte por materias");
+        cutMenuItem.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                cutMenuItemActionPerformed(evt);
+            }
+        });
         editMenu.add(cutMenuItem);
 
         copyMenuItem.setMnemonic('y');
-        copyMenuItem.setText("Copy");
+        copyMenuItem.setText("Reportes general");
+        copyMenuItem.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                copyMenuItemActionPerformed(evt);
+            }
+        });
         editMenu.add(copyMenuItem);
 
         pasteMenuItem.setMnemonic('p');
-        pasteMenuItem.setText("Paste");
+        pasteMenuItem.setText("REpote Consolidado");
+        pasteMenuItem.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                pasteMenuItemActionPerformed(evt);
+            }
+        });
         editMenu.add(pasteMenuItem);
 
         deleteMenuItem.setMnemonic('d');
@@ -162,6 +177,28 @@ public class Gui_Admin extends javax.swing.JFrame {
         desktopPane.add(qg);
         qg.show();
     }//GEN-LAST:event_saveAsMenuItemActionPerformed
+
+    private void cutMenuItemActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_cutMenuItemActionPerformed
+        // TODO add your handling code here:
+        Est_Materias es = new Est_Materias();
+        desktopPane.add(es);
+        es.show();
+    }//GEN-LAST:event_cutMenuItemActionPerformed
+
+    private void copyMenuItemActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_copyMenuItemActionPerformed
+        // TODO add your handling code here:
+        
+        Estudiante_Total est = new Estudiante_Total();
+        desktopPane.add(est);
+        est.show();
+    }//GEN-LAST:event_copyMenuItemActionPerformed
+
+    private void pasteMenuItemActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_pasteMenuItemActionPerformed
+        // TODO add your handling code here:
+        Mat_Gen_Total mtg = new Mat_Gen_Total();
+        desktopPane.add(mtg);
+        mtg.show();
+    }//GEN-LAST:event_pasteMenuItemActionPerformed
 
     /**
      * @param args the command line arguments

@@ -36,6 +36,7 @@ public class Resumen extends javax.swing.JInternalFrame {
     // <editor-fold defaultstate="collapsed" desc="Generated Code">//GEN-BEGIN:initComponents
     private void initComponents() {
 
+        JL_MAt = new javax.swing.JLabel();
         jLabel1 = new javax.swing.JLabel();
         jButton1 = new javax.swing.JButton();
         jLabel7 = new javax.swing.JLabel();
@@ -43,11 +44,12 @@ public class Resumen extends javax.swing.JInternalFrame {
         jLabel2 = new javax.swing.JLabel();
         JL_Name = new javax.swing.JLabel();
         jLabel4 = new javax.swing.JLabel();
-        JL_MAt = new javax.swing.JLabel();
         jLabel6 = new javax.swing.JLabel();
         LJ_Periodo = new javax.swing.JLabel();
         jScrollPane1 = new javax.swing.JScrollPane();
         JList_M = new javax.swing.JList<>();
+
+        JL_MAt.setText("# Mat");
 
         jLabel1.setFont(new java.awt.Font("Dialog", 1, 24)); // NOI18N
         jLabel1.setText("Resumen de Matricula");
@@ -72,8 +74,6 @@ public class Resumen extends javax.swing.JInternalFrame {
         JL_Name.setText("N. Estudiante");
 
         jLabel4.setText("# Matricula:");
-
-        JL_MAt.setText("# Mat");
 
         jLabel6.setText("Periodo:");
 
@@ -111,7 +111,6 @@ public class Resumen extends javax.swing.JInternalFrame {
                                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
                                     .addComponent(JTCedula)
                                     .addComponent(JL_Name, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                                    .addComponent(JL_MAt, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
                                     .addComponent(LJ_Periodo, javax.swing.GroupLayout.DEFAULT_SIZE, 209, Short.MAX_VALUE)))
                             .addComponent(jScrollPane1, javax.swing.GroupLayout.PREFERRED_SIZE, 413, javax.swing.GroupLayout.PREFERRED_SIZE))))
                 .addContainerGap(27, Short.MAX_VALUE))
@@ -130,9 +129,7 @@ public class Resumen extends javax.swing.JInternalFrame {
                     .addComponent(jLabel2)
                     .addComponent(JL_Name, javax.swing.GroupLayout.PREFERRED_SIZE, 24, javax.swing.GroupLayout.PREFERRED_SIZE))
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                    .addComponent(jLabel4)
-                    .addComponent(JL_MAt))
+                .addComponent(jLabel4)
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                     .addComponent(jLabel6)
@@ -197,7 +194,7 @@ public class Resumen extends javax.swing.JInternalFrame {
             while (rs.next()) {        
                
                 System.out.println(rs.getString(2)+rs.getString(3));
-                JL_Name.setText(rs.getString(2)+ " "+rs.getString(3));
+                JL_Name.setText(rs.getString(2)+ " "+rs.getString(4));
               
                 
             }

@@ -111,6 +111,7 @@ public class Gui_Pre_Mat extends javax.swing.JInternalFrame {
         JL_T6 = new javax.swing.JLabel();
         JL_T7 = new javax.swing.JLabel();
         JB_CheckT = new javax.swing.JButton();
+        jLabel1 = new javax.swing.JLabel();
 
         setIconifiable(true);
         setMaximizable(true);
@@ -346,13 +347,32 @@ public class Gui_Pre_Mat extends javax.swing.JInternalFrame {
             }
         });
 
+        jLabel1.setText("Si no desea matricular materias las restantes seleccionar la ultima Opción");
+
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
         getContentPane().setLayout(layout);
         layout.setHorizontalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(layout.createSequentialGroup()
+                .addGap(56, 56, 56)
+                .addComponent(jLabel2)
+                .addGap(18, 18, 18)
+                .addComponent(JT_Cedula, javax.swing.GroupLayout.PREFERRED_SIZE, 110, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addGap(18, 18, 18)
+                .addComponent(JB_Search))
+            .addGroup(layout.createSequentialGroup()
+                .addGap(16, 16, 16)
+                .addComponent(jLabel3))
+            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, layout.createSequentialGroup()
+                .addContainerGap()
+                .addComponent(JB_CheckT)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
+                .addComponent(JB_Save)
+                .addGap(284, 284, 284))
+            .addGroup(layout.createSequentialGroup()
                 .addGap(31, 31, 31)
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addComponent(jLabel1)
                     .addGroup(layout.createSequentialGroup()
                         .addGap(6, 6, 6)
                         .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
@@ -432,22 +452,6 @@ public class Gui_Pre_Mat extends javax.swing.JInternalFrame {
                             .addComponent(JL_T6)
                             .addComponent(JL_T7)))
                     .addComponent(jLabel12)))
-            .addGroup(layout.createSequentialGroup()
-                .addGap(56, 56, 56)
-                .addComponent(jLabel2)
-                .addGap(18, 18, 18)
-                .addComponent(JT_Cedula, javax.swing.GroupLayout.PREFERRED_SIZE, 110, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addGap(18, 18, 18)
-                .addComponent(JB_Search))
-            .addGroup(layout.createSequentialGroup()
-                .addGap(16, 16, 16)
-                .addComponent(jLabel3))
-            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, layout.createSequentialGroup()
-                .addContainerGap()
-                .addComponent(JB_CheckT)
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
-                .addComponent(JB_Save)
-                .addGap(284, 284, 284))
         );
         layout.setVerticalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
@@ -459,7 +463,9 @@ public class Gui_Pre_Mat extends javax.swing.JInternalFrame {
                     .addComponent(JB_Search))
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                 .addComponent(jLabel3)
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                .addComponent(jLabel1)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
                     .addComponent(jLabel12, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
                     .addComponent(JT_Name_Display))
@@ -1280,6 +1286,7 @@ try {
     private javax.swing.JRadioButton JRB_M7_3;
     private javax.swing.JTextField JT_Cedula;
     private javax.swing.JLabel JT_Name_Display;
+    private javax.swing.JLabel jLabel1;
     private javax.swing.JLabel jLabel10;
     private javax.swing.JLabel jLabel11;
     private javax.swing.JLabel jLabel12;
