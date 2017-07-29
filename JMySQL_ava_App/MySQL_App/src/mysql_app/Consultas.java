@@ -75,6 +75,7 @@ Connection_MySQL cm = new Connection_MySQL();
         JL_Mat = new javax.swing.JList<>();
         jButton1 = new javax.swing.JButton();
         JL_Num = new javax.swing.JLabel();
+        JL_N = new javax.swing.JLabel();
 
         setClosable(true);
         setIconifiable(true);
@@ -126,6 +127,8 @@ Connection_MySQL cm = new Connection_MySQL();
 
         JL_Num.setText("#");
 
+        JL_N.setText("#");
+
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
         getContentPane().setLayout(layout);
         layout.setHorizontalGroup(
@@ -140,7 +143,9 @@ Connection_MySQL cm = new Connection_MySQL();
                                 .addComponent(jLabel1)
                                 .addGap(37, 37, 37)
                                 .addComponent(JCB_MAt, javax.swing.GroupLayout.PREFERRED_SIZE, 229, javax.swing.GroupLayout.PREFERRED_SIZE)
-                                .addGap(0, 82, Short.MAX_VALUE))))
+                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
+                                .addComponent(JL_N)
+                                .addGap(0, 0, Short.MAX_VALUE))))
                     .addGroup(layout.createSequentialGroup()
                         .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                             .addGroup(layout.createSequentialGroup()
@@ -158,7 +163,7 @@ Connection_MySQL cm = new Connection_MySQL();
                                 .addComponent(jButton1)
                                 .addGap(41, 41, 41)
                                 .addComponent(JL_Num)))
-                        .addGap(0, 0, Short.MAX_VALUE))
+                        .addGap(0, 59, Short.MAX_VALUE))
                     .addComponent(jScrollPane2, javax.swing.GroupLayout.Alignment.TRAILING))
                 .addContainerGap())
         );
@@ -168,7 +173,8 @@ Connection_MySQL cm = new Connection_MySQL();
                 .addContainerGap()
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                     .addComponent(jLabel1)
-                    .addComponent(JCB_MAt, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                    .addComponent(JCB_MAt, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(JL_N))
                 .addGap(18, 18, 18)
                 .addComponent(jScrollPane1, javax.swing.GroupLayout.PREFERRED_SIZE, 176, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
@@ -189,9 +195,9 @@ Connection_MySQL cm = new Connection_MySQL();
 
         pack();
     }// </editor-fold>//GEN-END:initComponents
-
+    int contador=0;
     private void JCB_MAtActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_JCB_MAtActionPerformed
-        
+        contador=0;
          try {
             model.clear();
             Statement st;
@@ -204,11 +210,11 @@ Connection_MySQL cm = new Connection_MySQL();
             while (rs.next()) {  
                 
             model.addElement(rs.getString(2) + rs.getString(4));
-                
+                contador++;
                 
             }                
                 JL_ES.setModel(model);
-                
+                  JL_N.setText(String.valueOf(contador));
             
         } catch (Exception e) {
         }
@@ -310,7 +316,7 @@ int cnt =0;
              JL_Num.setText(String.valueOf(cnt));
             
             System.out.println(cnt);
-            
+          
             
         } catch (Exception e) {
             System.out.println(e);
@@ -326,6 +332,7 @@ int cnt =0;
     private javax.swing.JComboBox<String> JCB_MAt;
     private javax.swing.JList<String> JL_ES;
     private javax.swing.JList<String> JL_Mat;
+    private javax.swing.JLabel JL_N;
     private javax.swing.JLabel JL_Num;
     private javax.swing.JTextField JT_Cedula;
     private javax.swing.JButton jButton1;

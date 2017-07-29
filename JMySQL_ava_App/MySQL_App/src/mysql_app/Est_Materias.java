@@ -7,50 +7,55 @@ package mysql_app;
 
 import com.mysql.jdbc.Connection;
 
-
 import com.mysql.jdbc.Statement;
+import java.awt.Graphics;
+import java.awt.Graphics2D;
+import java.awt.print.PageFormat;
+import java.awt.print.Printable;
+import java.awt.print.PrinterException;
+import java.awt.print.PrinterJob;
 import java.sql.ResultSet;
 
 import java.util.ArrayList;
 import javax.swing.DefaultListModel;
+import javax.swing.JOptionPane;
 
 /**
  *
  * @author RociodelosAngeles
  */
-public class Est_Materias extends javax.swing.JInternalFrame {
- Connection_MySQL cm = new Connection_MySQL();
-       Connection cn= cm.get_Connection();
-       DefaultListModel model = new DefaultListModel();
-          DefaultListModel model2 = new DefaultListModel();
-            ArrayList<String> Mat_Cod = new ArrayList<String>();
-            Statement st;
-            ResultSet rs;
+public class Est_Materias extends javax.swing.JInternalFrame implements Printable {
+
+    Connection_MySQL cm = new Connection_MySQL();
+    Connection cn = cm.get_Connection();
+    DefaultListModel model = new DefaultListModel();
+    DefaultListModel model2 = new DefaultListModel();
+    ArrayList<String> Mat_Cod = new ArrayList<String>();
+    Statement st;
+    ResultSet rs;
+
     /**
      * Creates new form Est_Materias
      */
     public Est_Materias() {
         initComponents();
         try {
-            
+
             com.mysql.jdbc.Statement st;
             ResultSet rs;
             st = (com.mysql.jdbc.Statement) cn.createStatement();
             String s = "select * from materias";
             rs = st.executeQuery(s);
-            while (rs.next()) {        
-            Mat_Cod.add(rs.getString(1));
-                
-            JCB_MAt.addItem(rs.getString(2));
-                
-                
-            }                
-                
-                
-            
+            while (rs.next()) {
+                Mat_Cod.add(rs.getString(1));
+
+                JCB_MAt.addItem(rs.getString(2));
+
+            }
+
         } catch (Exception e) {
         }
-        
+
     }
 
     /**
@@ -67,6 +72,7 @@ public class Est_Materias extends javax.swing.JInternalFrame {
         jScrollPane1 = new javax.swing.JScrollPane();
         JL_ES = new javax.swing.JList<>();
         JLabel_Cont_M = new javax.swing.JLabel();
+        jButton1 = new javax.swing.JButton();
 
         setClosable(true);
         setIconifiable(true);
@@ -89,6 +95,13 @@ public class Est_Materias extends javax.swing.JInternalFrame {
         });
         jScrollPane1.setViewportView(JL_ES);
 
+        jButton1.setText("IMPRIMIR");
+        jButton1.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                jButton1ActionPerformed(evt);
+            }
+        });
+
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
         getContentPane().setLayout(layout);
         layout.setHorizontalGroup(
@@ -104,6 +117,10 @@ public class Est_Materias extends javax.swing.JInternalFrame {
                         .addGap(0, 0, Short.MAX_VALUE))
                     .addComponent(jScrollPane1, javax.swing.GroupLayout.DEFAULT_SIZE, 568, Short.MAX_VALUE))
                 .addContainerGap())
+            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, layout.createSequentialGroup()
+                .addGap(0, 0, Short.MAX_VALUE)
+                .addComponent(jButton1)
+                .addGap(95, 95, 95))
         );
         layout.setVerticalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
@@ -113,42 +130,73 @@ public class Est_Materias extends javax.swing.JInternalFrame {
                     .addComponent(jLabel1)
                     .addComponent(JCB_MAt, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                     .addComponent(JLabel_Cont_M, javax.swing.GroupLayout.PREFERRED_SIZE, 26, javax.swing.GroupLayout.PREFERRED_SIZE))
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 44, Short.MAX_VALUE)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 75, Short.MAX_VALUE)
                 .addComponent(jScrollPane1, javax.swing.GroupLayout.PREFERRED_SIZE, 176, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addGap(34, 34, 34))
+                .addGap(2, 2, 2)
+                .addComponent(jButton1))
         );
 
         pack();
     }// </editor-fold>//GEN-END:initComponents
-
+int contador = 0;
     private void JCB_MAtActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_JCB_MAtActionPerformed
 
+        contador = 0;
         try {
             model.clear();
-            
+            Statement st;
+            ResultSet rs;
             st = (Statement) cn.createStatement();
-            String s = "SELECT * FROM estudiante inner join materias_has_estudiante \n" +
-            "on estudiante.Cedula = materias_has_estudiante.Estudiante_Cedula\n" +
-            "where Materias_Codigo = \'"+  Mat_Cod.get(JCB_MAt.getSelectedIndex()) +"\';";
+            String s = "SELECT * FROM estudiante inner join materias_has_estudiante \n"
+                    + "on estudiante.Cedula = materias_has_estudiante.Estudiante_Cedula\n"
+                    + "where Materias_Codigo = \'" + Mat_Cod.get(JCB_MAt.getSelectedIndex()) + "\';";
             rs = st.executeQuery(s);
             while (rs.next()) {
 
                 model.addElement(rs.getString(2) + rs.getString(4));
+                contador++;
 
             }
             JL_ES.setModel(model);
+            JLabel_Cont_M.setText(String.valueOf(contador));
 
         } catch (Exception e) {
         }
 
+
     }//GEN-LAST:event_JCB_MAtActionPerformed
 
-
+    private void jButton1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton1ActionPerformed
+        try {
+            PrinterJob job = PrinterJob.getPrinterJob(); //crea un trabajo de impresion que se asocia con la impresora predeterminada
+            job.setPrintable(this);//Se pasa la instancia del Formulario (JFrame)
+            boolean x = job.printDialog();//Se Abre el dialogo Para Imprimir
+            if (x == true) {
+                job.print();
+            } else {
+                //Se canceló la impresión
+            }
+        } catch (PrinterException ex) {
+            JOptionPane.showMessageDialog(null, "No Se Logró Imprimir Por El Siguiente Motivo" + ex);
+        }
+    }//GEN-LAST:event_jButton1ActionPerformed
+    public int print(Graphics graphics, PageFormat pageFormat, int pageIndex) throws PrinterException {
+        if (pageIndex == 0) {
+            Graphics2D g2d = (Graphics2D) graphics;
+            g2d.translate(pageFormat.getImageableX(), pageFormat.getImageableY());
+            this.printAll(graphics);
+            return PAGE_EXISTS;
+        } else {
+            return NO_SUCH_PAGE;
+        }
+    }
     // Variables declaration - do not modify//GEN-BEGIN:variables
     private javax.swing.JComboBox<String> JCB_MAt;
     private javax.swing.JList<String> JL_ES;
     private javax.swing.JLabel JLabel_Cont_M;
+    private javax.swing.JButton jButton1;
     private javax.swing.JLabel jLabel1;
     private javax.swing.JScrollPane jScrollPane1;
     // End of variables declaration//GEN-END:variables
+
 }

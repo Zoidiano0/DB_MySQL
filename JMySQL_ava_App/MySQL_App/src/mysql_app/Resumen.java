@@ -7,7 +7,9 @@ package mysql_app;
 
 import com.mysql.jdbc.Connection;
 import com.mysql.jdbc.Statement;
+import java.sql.PreparedStatement;
 import java.sql.ResultSet;
+import java.util.ArrayList;
 import javax.swing.DefaultListModel;
 
 /**
@@ -20,11 +22,36 @@ public class Resumen extends javax.swing.JInternalFrame {
     Statement st;
     ResultSet rs;
     String Periodo="";
+      ArrayList<String> Mat_Cod = new ArrayList<String>();
+      ArrayList<String> Mat_Code = new ArrayList<String>();
+      
+       String NM_M1 ="1";
+    String NM_M2 ="1";
+    String NM_M3 ="1";
     /**
      * Creates new form Resumen
      */
     public Resumen() {
         initComponents();
+        
+        try {
+            
+                       
+            int cont =0;
+            st = (Statement) cn.createStatement();
+            String s = "select * from materias";
+            rs = st.executeQuery(s);
+             while (rs.next()) {        
+                Mat_Cod.add(rs.getString(1));
+                 System.out.println(Mat_Cod.get(cont));
+                 cont++;
+                JCB_M1.addItem(rs.getString(2));
+                
+                
+            }
+        } catch (Exception e) {
+        }
+       
     }
 
     /**
@@ -36,7 +63,6 @@ public class Resumen extends javax.swing.JInternalFrame {
     // <editor-fold defaultstate="collapsed" desc="Generated Code">//GEN-BEGIN:initComponents
     private void initComponents() {
 
-        JL_MAt = new javax.swing.JLabel();
         jLabel1 = new javax.swing.JLabel();
         jButton1 = new javax.swing.JButton();
         jLabel7 = new javax.swing.JLabel();
@@ -48,8 +74,16 @@ public class Resumen extends javax.swing.JInternalFrame {
         LJ_Periodo = new javax.swing.JLabel();
         jScrollPane1 = new javax.swing.JScrollPane();
         JList_M = new javax.swing.JList<>();
-
-        JL_MAt.setText("# Mat");
+        JB_EDIT = new javax.swing.JButton();
+        JCB_M1 = new javax.swing.JComboBox<>();
+        jLabel3 = new javax.swing.JLabel();
+        JRB_M1_1 = new javax.swing.JRadioButton();
+        JRB_M1_2 = new javax.swing.JRadioButton();
+        JRB_M1_3 = new javax.swing.JRadioButton();
+        jButton2 = new javax.swing.JButton();
+        JL_MAt = new javax.swing.JLabel();
+        JB_El = new javax.swing.JButton();
+        JB_Agr = new javax.swing.JButton();
 
         jLabel1.setFont(new java.awt.Font("Dialog", 1, 24)); // NOI18N
         jLabel1.setText("Resumen de Matricula");
@@ -86,20 +120,75 @@ public class Resumen extends javax.swing.JInternalFrame {
         });
         jScrollPane1.setViewportView(JList_M);
 
+        JB_EDIT.setText("Editar Seleccionada");
+        JB_EDIT.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                JB_EDITActionPerformed(evt);
+            }
+        });
+
+        JCB_M1.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { }));
+        JCB_M1.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                JCB_M1ActionPerformed(evt);
+            }
+        });
+
+        jLabel3.setText("N_Matricula");
+
+        JRB_M1_1.setSelected(true);
+        JRB_M1_1.setText("1");
+        JRB_M1_1.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                JRB_M1_1ActionPerformed(evt);
+            }
+        });
+
+        JRB_M1_2.setText("2");
+        JRB_M1_2.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                JRB_M1_2ActionPerformed(evt);
+            }
+        });
+
+        JRB_M1_3.setText("3");
+        JRB_M1_3.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                JRB_M1_3ActionPerformed(evt);
+            }
+        });
+
+        jButton2.setText("Refresh");
+        jButton2.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                jButton2ActionPerformed(evt);
+            }
+        });
+
+        JL_MAt.setText("#");
+
+        JB_El.setText("Eliminar");
+        JB_El.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                JB_ElActionPerformed(evt);
+            }
+        });
+
+        JB_Agr.setText("Agregar");
+        JB_Agr.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                JB_AgrActionPerformed(evt);
+            }
+        });
+
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
         getContentPane().setLayout(layout);
         layout.setHorizontalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(layout.createSequentialGroup()
-                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
                     .addGroup(layout.createSequentialGroup()
-                        .addGap(78, 78, 78)
-                        .addComponent(jLabel1))
-                    .addGroup(layout.createSequentialGroup()
-                        .addGap(192, 192, 192)
-                        .addComponent(jButton1))
-                    .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, layout.createSequentialGroup()
-                        .addGap(33, 33, 33)
+                        .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
                         .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                             .addGroup(layout.createSequentialGroup()
                                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
@@ -111,9 +200,40 @@ public class Resumen extends javax.swing.JInternalFrame {
                                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
                                     .addComponent(JTCedula)
                                     .addComponent(JL_Name, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                                    .addComponent(LJ_Periodo, javax.swing.GroupLayout.DEFAULT_SIZE, 209, Short.MAX_VALUE)))
-                            .addComponent(jScrollPane1, javax.swing.GroupLayout.PREFERRED_SIZE, 413, javax.swing.GroupLayout.PREFERRED_SIZE))))
-                .addContainerGap(27, Short.MAX_VALUE))
+                                    .addComponent(LJ_Periodo, javax.swing.GroupLayout.DEFAULT_SIZE, 209, Short.MAX_VALUE)
+                                    .addComponent(JL_MAt)))
+                            .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING, false)
+                                .addGroup(layout.createSequentialGroup()
+                                    .addComponent(JCB_M1, 0, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                                    .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                                    .addComponent(JB_EDIT))
+                                .addComponent(jScrollPane1, javax.swing.GroupLayout.PREFERRED_SIZE, 413, javax.swing.GroupLayout.PREFERRED_SIZE))))
+                    .addGroup(javax.swing.GroupLayout.Alignment.LEADING, layout.createSequentialGroup()
+                        .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING, false)
+                            .addGroup(javax.swing.GroupLayout.Alignment.LEADING, layout.createSequentialGroup()
+                                .addGap(78, 78, 78)
+                                .addComponent(jLabel1))
+                            .addGroup(layout.createSequentialGroup()
+                                .addGap(12, 12, 12)
+                                .addComponent(jLabel3)
+                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
+                                .addComponent(JRB_M1_1)
+                                .addGap(18, 18, 18)
+                                .addComponent(JRB_M1_2)
+                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
+                                .addComponent(JRB_M1_3)
+                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                                .addComponent(jButton2)
+                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
+                                .addComponent(jButton1)
+                                .addGap(76, 76, 76))
+                            .addGroup(javax.swing.GroupLayout.Alignment.LEADING, layout.createSequentialGroup()
+                                .addGap(34, 34, 34)
+                                .addComponent(JB_El)
+                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                                .addComponent(JB_Agr)))
+                        .addGap(0, 0, Short.MAX_VALUE)))
+                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
         );
         layout.setVerticalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
@@ -129,16 +249,35 @@ public class Resumen extends javax.swing.JInternalFrame {
                     .addComponent(jLabel2)
                     .addComponent(JL_Name, javax.swing.GroupLayout.PREFERRED_SIZE, 24, javax.swing.GroupLayout.PREFERRED_SIZE))
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                .addComponent(jLabel4)
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
+                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                    .addComponent(jLabel4)
+                    .addComponent(JL_MAt))
+                .addGap(18, 18, 18)
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                     .addComponent(jLabel6)
                     .addComponent(LJ_Periodo))
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                 .addComponent(jScrollPane1, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 65, Short.MAX_VALUE)
-                .addComponent(jButton1)
-                .addGap(18, 18, 18))
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                    .addComponent(JCB_M1, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(JB_EDIT))
+                .addGap(2, 2, 2)
+                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                    .addComponent(JB_El)
+                    .addComponent(JB_Agr))
+                .addGap(18, 18, 18)
+                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                        .addComponent(jButton1)
+                        .addComponent(jButton2))
+                    .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
+                        .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                            .addComponent(JRB_M1_1)
+                            .addComponent(JRB_M1_2)
+                            .addComponent(JRB_M1_3))
+                        .addComponent(jLabel3)))
+                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
         );
 
         pack();
@@ -173,12 +312,13 @@ public class Resumen extends javax.swing.JInternalFrame {
             
             // Obtener Materias
             st = (Statement) cn.createStatement();
-            String se = "SELECT Nombre FROM materias inner join materias_has_estudiante on materias.Codigo = materias_has_estudiante.Materias_Codigo where Estudiante_Cedula = \'"+ JTCedula.getText() +"\';";
+            String se = "SELECT * FROM materias inner join materias_has_estudiante on materias.Codigo = materias_has_estudiante.Materias_Codigo where Estudiante_Cedula = \'"+ JTCedula.getText() +"\';";
             rs = st.executeQuery(se);
            
             while (rs.next()) {        
                 System.out.println(rs.getString(1));
-                model.addElement(rs.getString(1));
+                model.addElement(rs.getString(2));
+                Mat_Code.add(rs.getString(1));
                 
                 
                 
@@ -221,16 +361,254 @@ public class Resumen extends javax.swing.JInternalFrame {
         
     }//GEN-LAST:event_JTCedulaActionPerformed
 
+    private void JB_EDITActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_JB_EDITActionPerformed
+        // TODO add your handling code here:
+        
+        System.out.println(JList_M.getSelectedIndex());
+        try {
+            
+            
+            
+            st = (Statement) cn.createStatement();
+            
+            
+            
+            String s = "update materias_has_estudiante SET Materias_Codigo = ? ,N_Matricula =? where Materias_Codigo =? and Estudiante_Cedula=?;";
+            PreparedStatement pst = cn.prepareStatement(s,Statement.RETURN_GENERATED_KEYS);
+           pst.setString(1, Mat_Cod.get(JCB_M1.getSelectedIndex()));
+            System.out.println(JCB_M1.getSelectedIndex());
+            System.out.println(Mat_Cod.get(JCB_M1.getSelectedIndex()));
+           pst.setInt(2, Integer.valueOf(NM_M1));
+            System.out.println(Integer.valueOf(NM_M1));
+           pst.setString(3,Mat_Code.get(JList_M.getSelectedIndex()));
+            System.out.println(Mat_Code.get(JList_M.getSelectedIndex()));
+           pst.setString(4, JTCedula.getText());
+            System.out.println(JTCedula.getText());
+           int ra = pst.executeUpdate();
+        } catch (Exception e) {
+            System.out.println("no se ejecuto");
+            System.out.println(e);
+        }
+        
+        
+        
+        
+        
+    }//GEN-LAST:event_JB_EDITActionPerformed
+
+    private void JRB_M1_1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_JRB_M1_1ActionPerformed
+
+        if (JRB_M1_1.isSelected() == true) {
+            JRB_M1_2.setSelected(false);
+            JRB_M1_3.setSelected(false);
+            NM_M1 = "1";
+        }
+    }//GEN-LAST:event_JRB_M1_1ActionPerformed
+
+    private void JRB_M1_2ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_JRB_M1_2ActionPerformed
+        // TODO add your handling code here:
+        if (JRB_M1_2.isSelected() == true) {
+            JRB_M1_1.setSelected(false);
+            JRB_M1_3.setSelected(false);
+            NM_M1 = "2";
+        }
+    }//GEN-LAST:event_JRB_M1_2ActionPerformed
+
+    private void JRB_M1_3ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_JRB_M1_3ActionPerformed
+        // TODO add your handling code here:
+        if (JRB_M1_3.isSelected() == true) {
+            JRB_M1_2.setSelected(false);
+            JRB_M1_1.setSelected(false);
+            NM_M1 = "3";
+
+        }
+    }//GEN-LAST:event_JRB_M1_3ActionPerformed
+
+    private void jButton2ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton2ActionPerformed
+        // TODO add your handling code here:
+                DefaultListModel model = new DefaultListModel();
+        model.clear();
+        
+        try {
+            
+            //obtener Ciclo Academico ACtivo 
+            st = (Statement) cn.createStatement();
+            
+            String s = "Select Codigo from periodo_académico where Estado= '1';";
+            
+            rs = st.executeQuery(s);
+            
+            while (rs.next()) {        
+               
+                Periodo=rs.getString(1);
+                System.out.println(Periodo);
+                LJ_Periodo.setText(Periodo);
+            }
+            
+            // Obtener Materias
+            st = (Statement) cn.createStatement();
+            String se = "SELECT * FROM materias inner join materias_has_estudiante on materias.Codigo = materias_has_estudiante.Materias_Codigo where Estudiante_Cedula = \'"+ JTCedula.getText() +"\';";
+            rs = st.executeQuery(se);
+           
+            while (rs.next()) {        
+                System.out.println(rs.getString(1));
+                model.addElement(rs.getString(2));
+                Mat_Code.add(rs.getString(1));
+                
+                
+                
+            }
+            JList_M.setModel(model);
+            
+            // obteniendo el nombre
+            
+            st = (Statement) cn.createStatement();
+            String s2 = "select * from estudiante where Cedula = \'"+JTCedula.getText()+"\';";
+            rs = st.executeQuery(s2);
+            
+            while (rs.next()) {        
+               
+                System.out.println(rs.getString(2)+rs.getString(3));
+                JL_Name.setText(rs.getString(2)+ " "+rs.getString(4));
+              
+                
+            }
+            // obtener el codigo de matricula 
+            
+            st = (Statement) cn.createStatement();
+            String s3 = "SELECT idMatricula FROM ciercom_pre_matricula.matricula where Estudiante = \'"+JTCedula.getText()+"\';";
+            rs = st.executeQuery(s3);
+            
+            while (rs.next()) {        
+               
+                System.out.println(rs.getString(1));
+                JL_MAt.setText(rs.getString(1));
+              
+                
+            }
+            
+            
+            
+        } catch (Exception e) {
+        }
+        
+        
+
+    }//GEN-LAST:event_jButton2ActionPerformed
+
+    private void JB_ElActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_JB_ElActionPerformed
+        // TODO add your handling code here:
+        
+         try {
+            
+                       
+            int cont =0;
+            st = (Statement) cn.createStatement();
+            String s = "DELETE FROM materias_has_estudiante WHERE Estudiante_Cedula =\'"+ JTCedula.getText()+"\' and Materias_Codigo = \'"+Mat_Code.get(JList_M.getSelectedIndex())+"\'; ";
+             System.out.println("Valor q se envia de materia");
+             System.out.println(Mat_Code.get(JList_M.getSelectedIndex()));
+            st.executeUpdate(s);
+             
+               
+        } catch (Exception e) {
+             System.out.println(e);
+        }
+       
+    }//GEN-LAST:event_JB_ElActionPerformed
+
+    private void JB_AgrActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_JB_AgrActionPerformed
+        // TODO add your handling code here:
+                   String Periodo="";  
+
+        String Matricula="";
+        try {
+            
+            
+            //Obtener el Periodo Academico Activo
+            
+            
+            
+             st = (Statement) cn.createStatement();
+            
+            String s = "Select Codigo from periodo_académico where Estado= '1';";
+            
+            rs = st.executeQuery(s);
+            
+            while (rs.next()) {        
+               
+                Periodo=rs.getString(1);
+                System.out.println(Periodo);
+                
+            }
+            
+             st = (Statement) cn.createStatement();
+            
+            String y = "Select idMatricula from matricula where Estudiante= \'"+JTCedula.getText()+"\';";
+            
+            rs = st.executeQuery(y);
+            
+            while (rs.next()) {        
+               
+                Matricula=rs.getString(1);
+                System.out.println(Matricula);
+                
+            }
+            
+        }
+            catch(Exception e){
+                    
+                    } 
+        
+        try {
+      
+        
+                       
+        
+            int cont =0;
+            st = (Statement) cn.createStatement();
+            String s = "INSERT INTO materias_has_estudiante (Materias_Codigo , Estudiante_Cedula, N_Matricula,Codigo_Matricula,periodo_académico_Código) values (?,?,?,?,?);";
+            PreparedStatement pst = cn.prepareStatement(s,Statement.RETURN_GENERATED_KEYS);
+           pst.setString(1, Mat_Cod .get(JCB_M1.getSelectedIndex()));
+            System.out.println("codigo "+ Mat_Code.get(JCB_M1.getSelectedIndex()));
+           pst.setString(2, JTCedula.getText());
+            System.out.println("Cedula "+JTCedula.getText() );
+           pst.setInt(3, Integer.valueOf(NM_M1));
+            System.out.println("NumeroMatri "+NM_M1);
+           pst.setString(4, Matricula);
+            System.out.println("Codigomat "+Matricula);
+           pst.setString(5, Periodo);
+            System.out.println("Periodo "+ Periodo);
+           int ra = pst.executeUpdate();
+             
+               
+        } catch (Exception e) {
+             System.out.println(e);
+        }
+    }//GEN-LAST:event_JB_AgrActionPerformed
+
+    private void JCB_M1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_JCB_M1ActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_JCB_M1ActionPerformed
+
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
+    private javax.swing.JButton JB_Agr;
+    private javax.swing.JButton JB_EDIT;
+    private javax.swing.JButton JB_El;
+    private javax.swing.JComboBox<String> JCB_M1;
     private javax.swing.JLabel JL_MAt;
     private javax.swing.JLabel JL_Name;
     private javax.swing.JList<String> JList_M;
+    private javax.swing.JRadioButton JRB_M1_1;
+    private javax.swing.JRadioButton JRB_M1_2;
+    private javax.swing.JRadioButton JRB_M1_3;
     private javax.swing.JTextField JTCedula;
     private javax.swing.JLabel LJ_Periodo;
     private javax.swing.JButton jButton1;
+    private javax.swing.JButton jButton2;
     private javax.swing.JLabel jLabel1;
     private javax.swing.JLabel jLabel2;
+    private javax.swing.JLabel jLabel3;
     private javax.swing.JLabel jLabel4;
     private javax.swing.JLabel jLabel6;
     private javax.swing.JLabel jLabel7;

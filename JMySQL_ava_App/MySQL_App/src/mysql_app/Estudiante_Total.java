@@ -7,14 +7,23 @@ package mysql_app;
 
 import com.mysql.jdbc.Connection;
 import com.mysql.jdbc.Statement;
+import java.awt.Graphics;
+import java.awt.Graphics2D;
+import java.awt.print.PageFormat;
+import java.awt.print.Printable;
+import static java.awt.print.Printable.NO_SUCH_PAGE;
+import static java.awt.print.Printable.PAGE_EXISTS;
+import java.awt.print.PrinterException;
+import java.awt.print.PrinterJob;
 import java.sql.ResultSet;
 import javax.swing.DefaultListModel;
+import javax.swing.JOptionPane;
 
 /**
  *
  * @author RociodelosAngeles
  */
-public class Estudiante_Total extends javax.swing.JInternalFrame {
+public class Estudiante_Total extends javax.swing.JInternalFrame implements Printable{
     Connection_MySQL cm = new Connection_MySQL();
        Connection cn= cm.get_Connection();
  DefaultListModel model = new DefaultListModel();
@@ -40,6 +49,7 @@ public class Estudiante_Total extends javax.swing.JInternalFrame {
         JButton_Refresh = new javax.swing.JButton();
         jLabel1 = new javax.swing.JLabel();
         JLabel_Cont_M = new javax.swing.JLabel();
+        jButton2 = new javax.swing.JButton();
 
         setClosable(true);
         setIconifiable(true);
@@ -56,6 +66,13 @@ public class Estudiante_Total extends javax.swing.JInternalFrame {
         });
 
         jLabel1.setText("Reporte Todos Los Estudaintes Matriculados");
+
+        jButton2.setText("IMPRIMIR");
+        jButton2.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                jButton2ActionPerformed(evt);
+            }
+        });
 
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
         getContentPane().setLayout(layout);
@@ -75,7 +92,9 @@ public class Estudiante_Total extends javax.swing.JInternalFrame {
                                 .addComponent(JLabel_Cont_M, javax.swing.GroupLayout.PREFERRED_SIZE, 37, javax.swing.GroupLayout.PREFERRED_SIZE))))
                     .addGroup(layout.createSequentialGroup()
                         .addGap(150, 150, 150)
-                        .addComponent(JButton_Refresh)))
+                        .addComponent(JButton_Refresh)
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                        .addComponent(jButton2)))
                 .addContainerGap(19, Short.MAX_VALUE))
         );
         layout.setVerticalGroup(
@@ -84,19 +103,31 @@ public class Estudiante_Total extends javax.swing.JInternalFrame {
                 .addContainerGap()
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                     .addGroup(layout.createSequentialGroup()
-                        .addGap(0, 0, Short.MAX_VALUE)
+                        .addGap(0, 22, Short.MAX_VALUE)
                         .addComponent(jLabel1))
                     .addComponent(JLabel_Cont_M, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                 .addComponent(jScrollPane1, javax.swing.GroupLayout.PREFERRED_SIZE, 301, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
-                .addComponent(JButton_Refresh)
+                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                    .addComponent(JButton_Refresh)
+                    .addComponent(jButton2))
                 .addContainerGap())
         );
 
         pack();
     }// </editor-fold>//GEN-END:initComponents
 
+     public int print(Graphics graphics, PageFormat pageFormat, int pageIndex) throws PrinterException {
+        if (pageIndex == 0) {
+            Graphics2D g2d = (Graphics2D) graphics;
+            g2d.translate(pageFormat.getImageableX(), pageFormat.getImageableY());
+            this.printAll(graphics);
+            return PAGE_EXISTS;
+        } else {
+            return NO_SUCH_PAGE;
+        }
+    }
     private void JButton_RefreshActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_JButton_RefreshActionPerformed
         // TODO add your handling code here:
 
@@ -138,11 +169,27 @@ public class Estudiante_Total extends javax.swing.JInternalFrame {
 
     }//GEN-LAST:event_JButton_RefreshActionPerformed
 
+    private void jButton2ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton2ActionPerformed
+        try {
+            PrinterJob job = PrinterJob.getPrinterJob(); //crea un trabajo de impresion que se asocia con la impresora predeterminada
+            job.setPrintable(this);//Se pasa la instancia del Formulario (JFrame)
+            boolean x = job.printDialog();//Se Abre el dialogo Para Imprimir
+            if (x == true) {
+                job.print();
+            } else {
+                //Se canceló la impresión
+            }
+        } catch (PrinterException ex) {
+            JOptionPane.showMessageDialog(null, "No Se Logró Imprimir Por El Siguiente Motivo" + ex);
+        }
+    }//GEN-LAST:event_jButton2ActionPerformed
+
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
     private javax.swing.JButton JButton_Refresh;
     private javax.swing.JLabel JLabel_Cont_M;
     private javax.swing.JList<String> Jlist_Mat;
+    private javax.swing.JButton jButton2;
     private javax.swing.JLabel jLabel1;
     private javax.swing.JScrollPane jScrollPane1;
     // End of variables declaration//GEN-END:variables
