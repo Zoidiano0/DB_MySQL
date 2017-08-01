@@ -7,9 +7,13 @@
 package mysql_app;
 
 import com.mysql.jdbc.Connection;
+import java.sql.Date;
 import java.sql.PreparedStatement;
 import java.sql.ResultSet;
 import java.sql.Statement;
+import java.text.DateFormat;
+import java.text.SimpleDateFormat;
+import java.util.Calendar;
 
 /**
  *
@@ -18,8 +22,13 @@ import java.sql.Statement;
 public class asign {
     
     public static void main (String[] args){
-        
-        Connection_MySQL cnr = new Connection_MySQL();
+  
+        DateFormat formato = new SimpleDateFormat("yyy/MM/DD HH:mm:ss");
+            Calendar cal = Calendar.getInstance();
+            java.util.Date tt = new java.util.Date();
+            String fecha = formato.format(tt);
+            System.out.println(fecha);
+       /* Connection_MySQL cnr = new Connection_MySQL();
         Connection cn = cnr.get_Connection();
         Statement st;
         Statement st2;
@@ -51,7 +60,6 @@ public class asign {
              }
         } catch (Exception e) {
         }
-        
+        */
     }
-
 }

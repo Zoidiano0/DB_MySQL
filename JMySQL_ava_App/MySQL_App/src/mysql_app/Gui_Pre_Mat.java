@@ -9,10 +9,17 @@ import com.mysql.jdbc.Connection;
 import com.mysql.jdbc.Statement;
 import java.awt.Container;
 
+
 import java.sql.DriverManager;
 import java.sql.PreparedStatement;
 import java.sql.ResultSet;
+import java.text.DateFormat;
+import java.time.LocalDateTime;
+import java.text.DateFormat;
+import java.text.SimpleDateFormat;
 import java.util.ArrayList;
+import java.util.Calendar;
+import java.util.Date;
 import javax.swing.JOptionPane;
 
 /**
@@ -829,7 +836,7 @@ try {
             NM_M7 = "3";
         }
     }//GEN-LAST:event_JRB_M7_3ActionPerformed
-
+String fecha;
     private void JB_SaveActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_JB_SaveActionPerformed
         // TODO add your handling code here:
       String Periodo="";  
@@ -868,12 +875,21 @@ try {
             
             
             //Ingreso datos
+            
+             
+             
                     st = (Statement) con.createStatement();
             
-            String m = "INSERT INTO matricula (Estudiante , Periodo_Academico) values (?,?);";
+            String m = "INSERT INTO matricula (Estudiante , Periodo_Academico , Fecha) values (?,?,?);";
             PreparedStatement pst = con.prepareStatement(m,Statement.RETURN_GENERATED_KEYS);
            pst.setString(1, JT_Cedula.getText());
            pst.setString(2,Periodo);
+           
+            DateFormat formato = new SimpleDateFormat("yyy/MM/DD HH:mm:ss");
+            
+            Date tt = new java.util.Date();
+            fecha = formato.format(tt);
+           pst.setString(3,fecha);
           
            int ra = pst.executeUpdate();
            
@@ -896,8 +912,7 @@ try {
            
            
                  
-           
-           
+               
            
            
            
@@ -1126,7 +1141,8 @@ try {
                         + "Nombre: "+Nombre+"\n"
                                  + "Matricula #"+ Matricula+"\n"+
                                   "Periodo: "+Periodo
-                                + "\n Materias:\n \n"
+                                + "\n Materias:\n"
+                                        + "Fecha: "+fecha+"\n \n"
                                 + JCB_M1.getItemAt(JCB_M1.getSelectedIndex()) + "\n"
                                         + JCB_M2.getItemAt(JCB_M2.getSelectedIndex()) + "\n"
                                         + JCB_M3.getItemAt(JCB_M3.getSelectedIndex()) + "\n"
